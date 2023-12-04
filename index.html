@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tom Mezzie</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dhurjati&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/fontawesome.min.css">
+
+</head>
+<body>
+    <section class="header">
+        <nav>
+            <!--<a href="index.html"><img src="images/logo.png" alt=""></a>-->
+            <div class="nav-links" id="navLinks">
+                <i class="fa fa-times" onclick="hideMenu()"></i>
+                <ul>
+                    <li><a href="">About</a></li>
+                    <li><a href="">Resume</a></li>
+                    <li><a href="">Projects</a></li>
+                    <li><a href="">Other</a></li>
+                </ul>
+            </div>
+            <i class="fa fa-bars" id="bars" onclick="showMenu()"></i>
+        </nav>
+        <div class="text-box">
+            <h1>Page is still under construction</h1>
+            <p>Here is a lengthy backstory about how much you want to hire me!</p>
+            <ul>
+                <a href="" class="linkedin">LinkedIn</a>
+                <a href="" class="github">GitHub</a>
+            </ul>
+        </div>
+
+    </section>
+
+<!--Toggle Menu-->
+    <script>
+        var navLinks = document.getElementById("navLinks");
+        var bars = document.getElementById("bars");
+
+        function showMenu(){
+            navLinks.style.right = "0";
+            bars.style.display = "none";
+        }
+
+        function hideMenu(){
+            navLinks.style.right = "-300px";
+            bars.style.display = "block";
+        }
+
+    </script>
+</body>
+</html>
