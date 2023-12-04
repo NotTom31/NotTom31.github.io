@@ -8,8 +8,16 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Dhurjati&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/fontawesome.min.css">
-
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <style>
+        .header .nav-links ul li.home-tab {
+            background-color: #758294;
+            border-bottom-left-radius: 5px;
+            border-bottom-right-radius: 5px;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+        }
+    </style>
 </head>
 <body>
     <section class="header">
@@ -18,11 +26,11 @@
             <div class="nav-links" id="navLinks">
                 <i class="fa fa-times" onclick="hideMenu()"></i>
                 <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="resume.html">Resume</a></li>
-                    <li><a href="projects.html">Projects</a></li>
-                    <li><a href="design.html">Design</a></li>
+                    <li class="home-tab"><a href="index.html">Home</a></li>
+                    <li class="about-tab"><a href="about.html">About</a></li>
+                    <li class="resume-tab"><a href="resume.html">Resume</a></li>
+                    <li class="projects-tab"><a href="projects.html">Projects</a></li>
+                    <li class="design-tab"><a href="design.html">Design</a></li>
                 </ul>
             </div>
             <i class="fa fa-bars" id="bars" onclick="showMenu()"></i>
@@ -47,13 +55,19 @@
         var bars = document.getElementById("bars");
 
         function showMenu(){
-            navLinks.style.right = "0";
+            navLinks.style.display = "block";
             bars.style.display = "none";
+            navLinks.style.right = "0";
+            
         }
 
         function hideMenu(){
             navLinks.style.right = "-300px";
+            
             bars.style.display = "block";
+            setTimeout(function () {
+                navLinks.style.display = "none";
+            }, 500);
         }
 
     </script>
