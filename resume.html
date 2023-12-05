@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Dhurjati&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/fontawesome.min.css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <style>
         .resume-header .nav-links ul li.resume-tab {
             background-color: #758294;
@@ -54,13 +54,19 @@
         var bars = document.getElementById("bars");
 
         function showMenu(){
-            navLinks.style.right = "0";
+            navLinks.style.display = "block";
             bars.style.display = "none";
+            navLinks.style.right = "0";
+            
         }
 
         function hideMenu(){
             navLinks.style.right = "-300px";
+            
             bars.style.display = "block";
+            setTimeout(function () {
+                navLinks.style.display = "none";
+            }, 500);
         }
 
     </script>
