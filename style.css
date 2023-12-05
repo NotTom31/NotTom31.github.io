@@ -11,8 +11,17 @@
     background-size: cover;
     position: relative;
 }
+.aboutme{
+    min-height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(4, 9, 30, 1), rgba(4,9,30,0.4)), url(images/banner3.png);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
 .header #bars {
-    position: absolute;
+    position: fixed;
+    z-index: 1001;
     top: 10px;
     right: 10px;
     cursor: pointer;
@@ -42,7 +51,7 @@ body {
     position: relative;
 }
 .projects-header{
-    min-height: 30vh;
+    min-height: 100vh;
     width: 100%;
     background-image: linear-gradient(rgba(4,9,30,0.4), rgba(4,9,30,1)), url(images/banner.png);
     background-position: center;
@@ -113,6 +122,48 @@ nav{
 .text-box ul{
     font-size: 40px;
 }
+.design-text-box{
+    width: 90%;
+    color: #fff;
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+.design-text-box h1{
+    font-size: 80px;
+}
+.design-text-box p{
+    margin: 0px 0 0px;
+    font-size: 25px;
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
+}
+.about-text-box{
+    width: 90%;
+    color: #111;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    text-align: center;
+}
+.about-text-box h1{
+    font-size: 80px;
+    font-family: 'Roboto', sans-serif;
+}
+.about-text-box p{
+    margin: 0px 0 0px;
+    font-size: 30px;
+    color: #111;
+    font-family: 'Roboto', sans-serif;
+}
 .linkedin{
     display: inline-block;
     text-decoration: none;
@@ -178,13 +229,37 @@ nav .fa{
     text-align: center;
 }
 
+.down-arrow{
+    color: #fff;
+    position: absolute;
+    top: 92%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1.1);
+    cursor: pointer;
+    transition: transform 0.1s ease-in-out;
+}
+.down-arrow:hover {
+    transform: translate(-50%, -50%) scaleY(1.4);
+    color: #3688f4;
+}
+
+.aboutme {
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.aboutme.visible {
+    opacity: 1;
+}
+
+
 .projects{
     width: 90%;
     color: #ffffff;
     position: relative;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -10%);
+    transform: translate(-50%, 0%);
     text-align: center;
 }
 .projects h1{
@@ -224,14 +299,14 @@ nav .fa{
 
 @media(max-width: 700px),( max-height: 700px){
     .text-box h1{
-        font-size: 30px;
+        font-size: 40px;
     }
     .nav-links ul li{
         display: block;
     }
     .nav-links{
         display: none;
-        position: absolute;
+        position: fixed;
         border: 1px solid #000;
         background-color: #3688f444;
         height: 100vh;
@@ -252,5 +327,25 @@ nav .fa{
     }
     .nav-links{
         padding: 30px;
+    }
+    .projects{
+        width: 90%;
+        color: #ffffff;
+        position: relative;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, 2%);
+        text-align: center;
+    }
+    .resume-section {
+        width: 90%;
+        max-height: 80%;
+        font-size: 30px;
+        color: #fff;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
     }
 }
