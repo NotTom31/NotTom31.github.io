@@ -369,4 +369,10 @@ nav .fa{
     .about-text-box{
         width: 90%;
     }
+    .about-text-box h1{
+        font-size: 27px;
+    }
+    .about-text-box p{
+        font-size: 22px;
+    }
 }
