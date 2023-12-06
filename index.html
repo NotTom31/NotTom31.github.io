@@ -56,7 +56,12 @@
                 
                 <div class="about-text-box">
                     <h1>Hey, I'm Tom!</h1>
-                    <p>I made this website!</p>
+                    <p>I recently graduated with my Bachelors in Computer Systems: Game Development. My degree is comparable to a Computer Science degree with a focus on creating games. 
+                        Through my coursework, I have developed proficiency with Unity, Unreal, and web development through several projects. 
+                        I have also gained valuable leadership experience by taking the initiative and leading the development of several projects and games. 
+                        Furthermore, my studies in game design have provided me with a deep understanding of player engagement, artificial intelligence design, 
+                        UI design, and user experience optimization, making me a suitable candidate for the role.
+                    </p>
                 </div>
             </div>
         </div>
@@ -64,7 +69,7 @@
 
     <section id="resume" class="resume-header">
         <div class="resume-section">
-            <embed src="resume.pdf" type="application/pdf" width="100%" height="900px" scrolling="no">
+            <embed src="resume.pdf" type="application/pdf" width="70%" height="900px" scrolling="no">
         </div>
 
     </section>
@@ -267,6 +272,21 @@
                         top: targetSection.offsetTop - (window.innerHeight - targetSection.clientHeight) / 2,
                         behavior: 'smooth'
                     });
+                }
+            });
+        });
+
+        // Adjust itch.io iframe width and height based on screen size
+        const itchIframes = document.querySelectorAll('.project-container iframe');
+
+        itchIframes.forEach(iframe => {
+            window.addEventListener('resize', function () {
+                if (window.innerWidth <= 700) {
+                    iframe.width = "60%";
+                    iframe.height = "200";
+                } else {
+                    iframe.width = "554";
+                    iframe.height = "169";
                 }
             });
         });
