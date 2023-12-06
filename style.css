@@ -53,7 +53,7 @@ body {
 .projects-header{
     min-height: 100vh;
     width: 100%;
-    background-image: linear-gradient(rgba(4,9,30,0.4), rgba(4,9,30,1)), url(images/banner.png);
+    background-image: linear-gradient(rgba(4,9,30,0.4), rgba(4,9,30,1)), url(images/banner6.png);
     background-position: center;
     background-size: cover;
     position: relative;
@@ -144,7 +144,7 @@ nav{
 }
 .about-text-box{
     width: 60%;
-    color: #111;
+    color: #fff;
     position: absolute;
     top: 30%;
     left: 50%;
@@ -153,7 +153,7 @@ nav{
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     transform: translate(-50%, -50%);
-    background-color: #ffffffc4;
+    background-color: #1f1f1fc7;
     text-align: center;
 }
 .about-text-box h1{
@@ -164,7 +164,7 @@ nav{
     margin: 10px;
     font-size: 30px;
     text-align: left;
-    color: #111;
+    color: #fff;
     font-family: 'Roboto', sans-serif;
 }
 .linkedin{
@@ -200,6 +200,17 @@ nav{
     position: relative;
     cursor: pointer;
 }
+.youtube{
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+    border: 1px solid #fff;
+    padding: 10px 30px;
+    font-size: 17px;
+    background: transparent;
+    position: relative;
+    cursor: pointer;
+}
 .linkedin:hover{
     border: 1px solid #3688f4;
     transition: 0.2s;
@@ -211,6 +222,11 @@ nav{
     color: #3688f4;
 }
 .itch:hover{
+    border: 1px solid #3688f4;
+    transition: 0.2s;
+    color: #3688f4;
+}
+.youtube:hover{
     border: 1px solid #3688f4;
     transition: 0.2s;
     color: #3688f4;
@@ -268,6 +284,7 @@ nav .fa{
 }
 .projects h1{
     font-size: 50px;
+    transform: translate(0%, 50%);
 }
 .projects li{
     list-style: none;
@@ -277,7 +294,7 @@ nav .fa{
 }
 .project-container{
     
-    background-color: #1f1f1f;
+    background-color: #1f1f1fc7;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
     border-top-left-radius: 10px;
@@ -295,6 +312,18 @@ nav .fa{
     font-family: 'Roboto', sans-serif;
     padding-left: 7px;
 }
+.description-panel ul {
+    list-style-type: none; /* Remove default list bullets */
+    padding: 0; /* Remove default padding */
+    display: flex; /* Use flexbox for horizontal alignment */
+    justify-content: center; /* Center the items horizontally */
+}
+
+.description-panel ul li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 .gameplay{
     float: right;
 }
@@ -305,6 +334,18 @@ nav .fa{
     border-bottom-right-radius: 5px;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
+}
+
+.description-panel {
+    width: 554px; /* Set the width to match the iframe width */
+    margin-top: 20px; /* Adjust as needed for spacing */
+}
+
+/* Add this style to make the description panel responsive */
+@media (max-width: 700px) {
+    .description-panel {
+        width: 100%; /* Set to 100% for smaller screens */
+    }
 }
 
 @media (min-width: 701px) and (min-height: 701px) {
@@ -374,6 +415,17 @@ nav .fa{
         font-size: 27px;
     }
     .about-text-box p{
+        font-size: 22px;
+    }
+
+    .design-text-box{
+        width: 90%;
+        top: 50%;
+    }
+    .design-text-box h1{
+        font-size: 27px;
+    }
+    .design-text-box p{
         font-size: 22px;
     }
 }
