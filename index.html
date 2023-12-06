@@ -9,15 +9,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Dhurjati&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/a371e139f0.js" crossorigin="anonymous"></script>
-    <style>
-        .header .nav-links ul li.home-tab {
-            background-color: #758294;
-            border-bottom-left-radius: 5px;
-            border-bottom-right-radius: 5px;
-            border-top-left-radius: 5px;
-            border-top-right-radius: 5px;
-        }
-    </style>
 </head>
 <body>
     <section class="header">
@@ -49,18 +40,16 @@
         </div>
     </section>
 
-    <!--about-->
+<!--about-->
     <section id="about">
         <div class="aboutme">
             <div class="profile-container">
-                
                 <div class="about-text-box">
-                    <h1>Hey, I'm Tom!</h1>
-                    <p>I recently graduated with my Bachelors in Computer Systems: Game Development. My degree is comparable to a Computer Science degree with a focus on creating games. 
-                        Through my coursework, I have developed proficiency with Unity, Unreal, and web development through several projects. 
-                        I have also gained valuable leadership experience by taking the initiative and leading the development of several projects and games. 
-                        Furthermore, my studies in game design have provided me with a deep understanding of player engagement, artificial intelligence design, 
-                        UI design, and user experience optimization, making me a suitable candidate for the role.
+                    <h1>About Me</h1>
+                    <p>I am a game developer and level designer specializing in Unity and Unreal. In May 2023, I earned my Bachelor's degree in Computer Systems: Game Development. 
+                        My journey in game making started early on by making adventure maps and constructing cities and castles in Minecraft. 
+                        I delved into Super Mario 64 romhacking and level design in Mario Maker before creating my first game using Construct during high school. 
+                        Throughout college, I learned to work with Unity and Unreal and have created several games in both engines. 
                     </p>
                 </div>
             </div>
@@ -74,6 +63,7 @@
 
     </section>
 
+<!--projects-->
 
     <section id="projects" class="projects-header">
         <div class="projects">
@@ -166,30 +156,19 @@
         </div>
     </section>
 
+<!--design-->
+
     <section id="design" class="header">
-        <nav>
-            <!--<a href="index.html"><img src="images/logo.png" alt=""></a>-->
-            <div class="nav-links" id="navLinks">
-                <i class="fa fa-times" onclick="hideMenu()"></i>
-                <ul>
-                    <li class="home-tab"><a href="index.html">Home</a></li>
-                    <li class="about-tab"><a href="about.html">About</a></li>
-                    <li class="resume-tab"><a href="resume.html">Resume</a></li>
-                    <li class="projects-tab"><a href="projects.html">Projects</a></li>
-                    <li class="design-tab"><a href="design.html">Design</a></li>
-                </ul>
-            </div>
-            <i class="fa fa-bars" id="bars" onclick="showMenu()"></i>
-        </nav>
         <div class="design-text-box">
             <h1>Level Design</h1>
-            <p>Level design is something I've been passionate about since before I knew it was even a job. I started with making challenge maps in minecraft, and moved on to making custom levels for Super Mario 64. add more about Mario maker, then move on to Unity and Unreal</p>
+            <p>Level design is something I've been passionate about since before I knew it was even a job. I started with making challenge maps in minecraft, 
+                and moved on to making custom levels for Super Mario 64. add more about Mario maker, then move on to Unity and Unreal</p>
         </div>
 
     </section>
 
 
-<!--Toggle Menu-->
+<!--scripts-->
 <script>
     var navLinks = document.getElementById("navLinks");
     var bars = document.getElementById("bars");
@@ -223,20 +202,41 @@
     }
 
     function handleScroll() {
-        const aboutMeSection = document.querySelector('.aboutme');
+    const aboutMeSection = document.querySelector('.aboutme');
+    const resumeSection = document.querySelector('.resume-section');
+    const projectsSection = document.querySelector('.projects-header');
+    const designSection = document.querySelector('.design-text-box');
+    const homeTab = document.querySelector('.home-tab');
 
-        if (isElementPartiallyInViewport(aboutMeSection, 50)) {
-            aboutMeSection.classList.add('visible');
+    const sections = [
+    { section: document.querySelector('.header'), tab: document.querySelector('.home-tab') },
+    { section: aboutMeSection, tab: document.querySelector('.about-tab') },
+    { section: resumeSection, tab: document.querySelector('.resume-tab') },
+    { section: projectsSection, tab: document.querySelector('.projects-tab') },
+    { section: designSection, tab: document.querySelector('.design-tab') },
+];
+
+    sections.forEach(({ section, tab }) => {
+        if (isElementPartiallyInViewport(section, 50)) {
+            tab.classList.add('active');
         } else {
-            aboutMeSection.classList.remove('visible');
+            tab.classList.remove('active');
         }
+    });
+
+    // Toggle the opacity for the aboutme section
+    if (isElementPartiallyInViewport(aboutMeSection, 50)) {
+        aboutMeSection.classList.add('visible');
+    } else {
+        aboutMeSection.classList.remove('visible');
     }
+}
 
-    document.addEventListener('scroll', handleScroll);
-    window.addEventListener('resize', checkWindowSize);
+document.addEventListener('scroll', handleScroll);
+window.addEventListener('resize', checkWindowSize);
 
-    handleScroll();
-    checkWindowSize();
+handleScroll();
+checkWindowSize();
 
     function isElementPartiallyInViewport(el, percentVisible) {
         const rect = el.getBoundingClientRect();
@@ -275,6 +275,24 @@
                 }
             });
         });
+
+        function setResumeHeight() {
+            const resumeSection = document.querySelector('.resume-section');
+            const embedElement = resumeSection.querySelector('embed');
+
+            // Set a minimum height for the resume section
+            const minHeight = 400;
+
+            // Calculate the height based on the screen height
+            const newHeight = Math.max(window.innerHeight * 0.8, minHeight);
+
+            // Set the new height to the embed element
+            embedElement.style.height = newHeight + 'px';
+        }
+
+        // Call the function initially and on window resize
+        setResumeHeight();
+        window.addEventListener('resize', setResumeHeight);
 
         // Adjust itch.io iframe width and height based on screen size
         const itchIframes = document.querySelectorAll('.project-container iframe');
