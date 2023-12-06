@@ -202,35 +202,57 @@
     }
 
     function handleScroll() {
-    const aboutMeSection = document.querySelector('.aboutme');
-    const resumeSection = document.querySelector('.resume-section');
-    const projectsSection = document.querySelector('.projects-header');
-    const designSection = document.querySelector('.design-text-box');
-    const homeTab = document.querySelector('.home-tab');
+        const aboutMeSection = document.querySelector('.aboutme');
+        const resumeSection = document.querySelector('.resume-section');
+        const projectsSection = document.querySelector('.projects-header');
+        const designSection = document.querySelector('.design-text-box');
+        const homeTab = document.querySelector('.home-tab');
+        const downArrow = document.querySelector('.down-arrow');
 
-    const sections = [
-    { section: document.querySelector('.header'), tab: document.querySelector('.home-tab') },
-    { section: aboutMeSection, tab: document.querySelector('.about-tab') },
-    { section: resumeSection, tab: document.querySelector('.resume-tab') },
-    { section: projectsSection, tab: document.querySelector('.projects-tab') },
-    { section: designSection, tab: document.querySelector('.design-tab') },
-];
+        const sections = [
+        { section: document.querySelector('.header'), tab: document.querySelector('.home-tab') },
+        { section: aboutMeSection, tab: document.querySelector('.about-tab') },
+        { section: resumeSection, tab: document.querySelector('.resume-tab') },
+        { section: projectsSection, tab: document.querySelector('.projects-tab') },
+        { section: designSection, tab: document.querySelector('.design-tab') },
+        ];
 
-    sections.forEach(({ section, tab }) => {
-        if (isElementPartiallyInViewport(section, 50)) {
-            tab.classList.add('active');
+        sections.forEach(({ section, tab }) => {
+            if (isElementPartiallyInViewport(section, 50)) {
+                tab.classList.add('active');
+            } else {
+                tab.classList.remove('active');
+            }
+        });
+
+        // Toggle the opacity for the aboutme section
+        if (isElementPartiallyInViewport(aboutMeSection, 50)) {
+            aboutMeSection.classList.add('visible');
         } else {
-            tab.classList.remove('active');
+            aboutMeSection.classList.remove('visible');
         }
-    });
 
-    // Toggle the opacity for the aboutme section
-    if (isElementPartiallyInViewport(aboutMeSection, 50)) {
-        aboutMeSection.classList.add('visible');
-    } else {
-        aboutMeSection.classList.remove('visible');
+        if (isElementPartiallyInViewport(designSection, 50)) {
+            // Rotate the down arrow
+            downArrow.style.transform = 'rotate(180deg)';
+            
+            // Change the behavior to scroll back to the home section
+            downArrow.onclick = function() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            };
+        } else {
+            // Reset the down arrow to its default state
+            downArrow.style.transform = 'rotate(0deg)';
+            
+            // Change the behavior to scroll down
+            downArrow.onclick = function() {
+                scrollDown();
+            };
+        }
     }
-}
 
 document.addEventListener('scroll', handleScroll);
 window.addEventListener('resize', checkWindowSize);
