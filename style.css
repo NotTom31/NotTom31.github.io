@@ -146,7 +146,7 @@ nav{
     width: 60%;
     color: #fff;
     position: absolute;
-    top: 30%;
+    top: 50%;
     left: 50%;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
@@ -172,7 +172,7 @@ nav{
     text-decoration: none;
     color: #fff;
     border: 1px solid #fff;
-    padding: 10px 30px;
+    padding: 10px 20px;
     font-size: 17px;
     background: transparent;
     position: relative;
@@ -183,7 +183,7 @@ nav{
     text-decoration: none;
     color: #fff;
     border: 1px solid #fff;
-    padding: 10px 30px;
+    padding: 10px 20px;
     font-size: 17px;
     background: transparent;
     position: relative;
@@ -194,7 +194,7 @@ nav{
     text-decoration: none;
     color: #fff;
     border: 1px solid #fff;
-    padding: 10px 30px;
+    padding: 10px 20px;
     font-size: 17px;
     background: transparent;
     position: relative;
@@ -205,7 +205,7 @@ nav{
     text-decoration: none;
     color: #fff;
     border: 1px solid #fff;
-    padding: 10px 30px;
+    padding: 10px 20px;
     font-size: 17px;
     background: transparent;
     position: relative;
@@ -312,17 +312,24 @@ nav .fa{
     font-family: 'Roboto', sans-serif;
     padding-left: 7px;
 }
+.description-panel img{
+    display: block;
+    margin: auto;
+    max-width: 90%;
+    height: auto;
+}
 .description-panel ul {
-    list-style-type: none; /* Remove default list bullets */
-    padding: 0; /* Remove default padding */
-    display: flex; /* Use flexbox for horizontal alignment */
-    justify-content: center; /* Center the items horizontally */
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
 }
 
 .description-panel ul li {
     display: flex;
     align-items: center;
     justify-content: center;
+    margin: 0 -10px;
 }
 .gameplay{
     float: right;
