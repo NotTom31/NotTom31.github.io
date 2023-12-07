@@ -53,7 +53,7 @@ body {
 .projects-header{
     min-height: 100vh;
     width: 100%;
-    background-image: linear-gradient(rgba(4,9,30,0.4), rgba(4,9,30,1)), url(images/banner6.png);
+    background-image: linear-gradient(rgba(4,9,30,0.4), rgba(4,9,30,1)), url(images/banner5.png);
     background-position: center;
     background-size: cover;
     position: relative;
@@ -125,7 +125,7 @@ nav{
     font-size: 40px;
 }
 .design-text-box{
-    width: 90%;
+    width: 60%;
     color: #fff;
     position: absolute;
     top: 20%;
@@ -344,14 +344,42 @@ nav .fa{
 }
 
 .description-panel {
-    width: 554px; /* Set the width to match the iframe width */
-    margin-top: 20px; /* Adjust as needed for spacing */
+    width: 554px; 
+    margin-top: 20px; 
 }
 
-/* Add this style to make the description panel responsive */
+.design-images {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; 
+}
+
+.design-images ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+}
+
+.design-images li {
+    margin: 0 10px; 
+}
+
+.design-images img {
+    max-width: 100%;
+    height: auto;
+    max-height: 300px;
+    transition: transform 0.2s ease-in-out;
+}
+
+.design-images img:hover {
+    transform: scale(1.4); 
+}
+
+
 @media (max-width: 700px) {
     .description-panel {
-        width: 100%; /* Set to 100% for smaller screens */
+        width: 100%; 
     }
 }
 
@@ -427,7 +455,7 @@ nav .fa{
 
     .design-text-box{
         width: 90%;
-        top: 50%;
+        top: 30%;
     }
     .design-text-box h1{
         font-size: 27px;
