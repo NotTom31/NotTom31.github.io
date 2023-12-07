@@ -73,7 +73,7 @@
                 <ul>
                     <li>
                         <div class="project-container">
-                            <iframe frameborder="0" src="https://itch.io/embed/2307646?linkback=true&amp;border_width=2&amp;bg_color=222222&amp;fg_color=eeeeee&amp;link_color=3688f4&amp;border_color=363636" width="554" height="169"></iframe>
+                            <iframe frameborder="0" src="https://itch.io/embed/2307646?linkback=true&amp;border_width=2&amp;bg_color=222222&amp;fg_color=eeeeee&amp;link_color=3688f4&amp;border_color=363636" width=60% height="169"></iframe>
                             <div class="description-panel">
                                 
                                 <h4>Project Lead, Gameplay Design and Programmer</h4>
@@ -97,7 +97,7 @@
                     </li>
                     <li>
                         <div class="project-container">
-                            <iframe frameborder="0" src="https://itch.io/embed/2176030?linkback=true&amp;border_width=2&amp;bg_color=222222&amp;fg_color=eeeeee&amp;link_color=3688f4&amp;border_color=363636" width="554" height="169"></iframe>
+                            <iframe frameborder="0" src="https://itch.io/embed/2176030?linkback=true&amp;border_width=2&amp;bg_color=222222&amp;fg_color=eeeeee&amp;link_color=3688f4&amp;border_color=363636" width=60% height="169"></iframe>
                             <div class="description-panel">
                                 
                                 <h4>Project Co-Lead, Level Design, Programmer</h4>
@@ -121,7 +121,7 @@
                     </li>
                     <li>
                         <div class="project-container">
-                            <iframe frameborder="0" src="https://itch.io/embed/2136262?linkback=true&amp;border_width=2&amp;bg_color=222222&amp;fg_color=eeeeee&amp;link_color=3688f4&amp;border_color=363636" width="554" height="169"></iframe>
+                            <iframe frameborder="0" src="https://itch.io/embed/2136262?linkback=true&amp;border_width=2&amp;bg_color=222222&amp;fg_color=eeeeee&amp;link_color=3688f4&amp;border_color=363636" width=60% height="169"></iframe>
                             <div class="description-panel">
                                 
                                 <h4>Project Co-Lead, Game/Graphics Programming, UI Design/Programming, Level Design</h4>
@@ -150,7 +150,7 @@
                 <ul>
                     <li>
                         <div class="project-container">
-                            <iframe frameborder="0" src="https://itch.io/embed/2117350?linkback=true&amp;border_width=2&amp;bg_color=222222&amp;fg_color=eeeeee&amp;link_color=3688f4&amp;border_color=363636" width="554" height="169"></iframe>
+                            <iframe frameborder="0" src="https://itch.io/embed/2117350?linkback=true&amp;border_width=2&amp;bg_color=222222&amp;fg_color=eeeeee&amp;link_color=3688f4&amp;border_color=363636" width=60% height="169"></iframe>
                             <div class="description-panel">
                                 
                                 <h4>Combat Designer, Programmer</h4>
@@ -175,7 +175,7 @@
                     </li>
                     <li>
                         <div class="project-container">
-                            <iframe frameborder="0" src="https://itch.io/embed/2131875?linkback=true&amp;border_width=2&amp;bg_color=222222&amp;fg_color=eeeeee&amp;link_color=3688f4&amp;border_color=363636" width="554" height="169"></iframe>
+                            <iframe frameborder="0" src="https://itch.io/embed/2131875?linkback=true&amp;border_width=2&amp;bg_color=222222&amp;fg_color=eeeeee&amp;link_color=3688f4&amp;border_color=363636" width=60% height="169"></iframe>
                             <div class="description-panel">
                                 
                                 <h4>Programmer, Level Design</h4>
@@ -199,7 +199,7 @@
                     </li>
                     <li>
                         <div class="project-container">
-                            <iframe frameborder="0" src="https://itch.io/embed/2131795?linkback=true&amp;border_width=2&amp;bg_color=222222&amp;fg_color=eeeeee&amp;link_color=3688f4&amp;border_color=363636" width="554" height="169"></iframe>
+                            <iframe frameborder="0" src="https://itch.io/embed/2131795?linkback=true&amp;border_width=2&amp;bg_color=222222&amp;fg_color=eeeeee&amp;link_color=3688f4&amp;border_color=363636" width=60% height="169"></iframe>
                             <div class="description-panel">
                                 
                                 <h4>Programmer, Level Design</h4>
@@ -368,6 +368,16 @@ checkWindowSize();
         const itchIframes = document.querySelectorAll('.project-container iframe');
 
         itchIframes.forEach(iframe => {
+            // Set initial size when the page loads
+            if (window.innerWidth <= 700) {
+                iframe.width = "60%";
+                iframe.height = "200";
+            } else {
+                iframe.width = "554";
+                iframe.height = "169";
+            }
+
+            // Update size on window resize
             window.addEventListener('resize', function () {
                 if (window.innerWidth <= 700) {
                     iframe.width = "60%";
