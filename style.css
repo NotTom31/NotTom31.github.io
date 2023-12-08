@@ -381,8 +381,14 @@ nav .fa{
     max-height: 300px;
     transition: transform 0.2s ease-in-out;
 }
+.design-images p {
+    max-width: 100%;
+    width: auto;
+    text-align: center;
+    transition: transform 0.2s ease-in-out;
+}
 
-.design-images img:hover {
+.design-images li:hover {
     transform: scale(1.4); 
 }
 
