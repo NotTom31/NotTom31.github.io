@@ -347,6 +347,12 @@ nav .fa{
     width: 554px; 
     margin-top: 20px; 
 }
+.description-panel img{
+    transition: transform 0.2s ease-in-out;
+}
+.description-panel img:hover{
+    transform: scale(1.4); 
+}
 
 .design-images {
     display: flex;
@@ -363,6 +369,10 @@ nav .fa{
 
 .design-images li {
     margin: 0 10px; 
+}
+.design-images p{
+    color: #fff;
+    font-size: 25px;
 }
 
 .design-images img {
