@@ -53,7 +53,7 @@ body {
 .projects-header{
     min-height: 100vh;
     width: 100%;
-    background-image: linear-gradient(rgba(4,9,30,0.4), rgba(4,9,30,1)), url(images/banner.png);
+    background-image: linear-gradient(rgba(4,9,30,0.4), rgba(4,9,30,1)), url(images/banner5new.PNG);
     background-position: center;
     background-size: cover;
     position: relative;
@@ -125,12 +125,12 @@ nav{
     font-size: 40px;
 }
 .design-text-box{
-    width: 90%;
+    width: 60%;
     color: #fff;
-    position: absolute;
-    top: 20%;
+    position: relative;
+    margin-bottom: 50px;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translateX(-50%);
     text-align: center;
 }
 .design-text-box h1{
@@ -144,16 +144,16 @@ nav{
 }
 .about-text-box{
     width: 60%;
-    color: #111;
+    color: #fff;
     position: absolute;
-    top: 30%;
+    top: 50%;
     left: 50%;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     transform: translate(-50%, -50%);
-    background-color: #ffffffc4;
+    background-color: #1f1f1fc7;
     text-align: center;
 }
 .about-text-box h1{
@@ -164,7 +164,7 @@ nav{
     margin: 10px;
     font-size: 30px;
     text-align: left;
-    color: #111;
+    color: #fff;
     font-family: 'Roboto', sans-serif;
 }
 .linkedin{
@@ -172,7 +172,7 @@ nav{
     text-decoration: none;
     color: #fff;
     border: 1px solid #fff;
-    padding: 10px 30px;
+    padding: 10px 20px;
     font-size: 17px;
     background: transparent;
     position: relative;
@@ -183,7 +183,7 @@ nav{
     text-decoration: none;
     color: #fff;
     border: 1px solid #fff;
-    padding: 10px 30px;
+    padding: 10px 20px;
     font-size: 17px;
     background: transparent;
     position: relative;
@@ -194,7 +194,18 @@ nav{
     text-decoration: none;
     color: #fff;
     border: 1px solid #fff;
-    padding: 10px 30px;
+    padding: 10px 20px;
+    font-size: 17px;
+    background: transparent;
+    position: relative;
+    cursor: pointer;
+}
+.youtube{
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+    border: 1px solid #fff;
+    padding: 10px 20px;
     font-size: 17px;
     background: transparent;
     position: relative;
@@ -211,6 +222,11 @@ nav{
     color: #3688f4;
 }
 .itch:hover{
+    border: 1px solid #3688f4;
+    transition: 0.2s;
+    color: #3688f4;
+}
+.youtube:hover{
     border: 1px solid #3688f4;
     transition: 0.2s;
     color: #3688f4;
@@ -268,6 +284,7 @@ nav .fa{
 }
 .projects h1{
     font-size: 50px;
+    transform: translate(0%, 50%);
 }
 .projects li{
     list-style: none;
@@ -277,7 +294,7 @@ nav .fa{
 }
 .project-container{
     
-    background-color: #1f1f1f;
+    background-color: #1f1f1fc7;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
     border-top-left-radius: 10px;
@@ -295,6 +312,25 @@ nav .fa{
     font-family: 'Roboto', sans-serif;
     padding-left: 7px;
 }
+.description-panel img{
+    display: block;
+    margin: auto;
+    max-width: 90%;
+    height: auto;
+}
+.description-panel ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.description-panel ul li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 -10px;
+}
 .gameplay{
     float: right;
 }
@@ -305,6 +341,64 @@ nav .fa{
     border-bottom-right-radius: 5px;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
+}
+
+.description-panel {
+    width: 554px; 
+    margin-top: 20px; 
+}
+.description-panel img{
+    transition: transform 0.2s ease-in-out;
+}
+.description-panel img:hover{
+    transform: scale(1.4); 
+}
+
+.design-images {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100svh; 
+    position: relative;
+}
+
+.design-images ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+}
+
+.design-images li {
+    margin: 0 10px; 
+}
+.design-images p{
+    color: #fff;
+    font-size: 25px;
+}
+
+.design-images img {
+    max-width: 100%;
+    height: auto;
+    max-height: 300px;
+    transition: transform 0.2s ease-in-out;
+}
+.design-images p {
+    max-width: 100%;
+    width: auto;
+    text-align: center;
+    transition: transform 0.2s ease-in-out;
+}
+
+.design-images li:hover {
+    transform: scale(1.4); 
+}
+
+
+@media (max-width: 700px) {
+    .description-panel {
+        width: 100%; 
+    }
 }
 
 @media (min-width: 701px) and (min-height: 701px) {
@@ -368,11 +462,54 @@ nav .fa{
 
     .about-text-box{
         width: 90%;
+        top: 50%;
     }
     .about-text-box h1{
         font-size: 27px;
     }
     .about-text-box p{
         font-size: 22px;
+    }
+
+    .design-text-box {
+        width: 90%;
+        margin-top: 30px;
+        margin-bottom: 10px;
+        position: relative;
+        left: 50%;
+        transform: translate(-50%, 0);
+        text-align: center;
+    }
+
+    .design-text-box h1 {
+        font-size: 27px;
+    }
+
+    .design-text-box p {
+        font-size: 22px;
+    }
+
+    .design-images img {
+        max-width: 100%;
+        height: auto;
+        max-height: 200px;
+        transition: transform 0.2s ease-in-out;
+    }
+    .design-images {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+    }
+    
+    .design-images ul {
+        list-style-type: none;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .design-images li {
+        text-align: center; /* Center text horizontally */
     }
 }
