@@ -200,27 +200,24 @@ h3 {
 }
 
 .rating::before {
-    content: "\2605"; /* Unicode character for a solid star */
+    content: "\2605"; /* Unicode solid star */
 }
-
 [data-rating="1"]::before {
-    content: "\2605\2606\2606\2606\2606"; /* Unicode characters for one solid star and four empty stars */
+    content: "\2605\2606\2606\2606\2606"; /* 1 solid */
 }
-
 [data-rating="2"]::before {
-    content: "\2605\2605\2606\2606\2606"; /* Unicode characters for two solid stars and three empty stars */
+    content: "\2605\2605\2606\2606\2606"; /* 2 solid */
 }
 [data-rating="3"]::before {
-    content: "\2605\2605\2605\2606\2606"; /* Unicode characters for three solid stars and two empty stars */
+    content: "\2605\2605\2605\2606\2606"; /* 3 solid */
 }
-
 [data-rating="4"]::before {
-    content: "\2605\2605\2605\2605\2606"; /* Unicode characters for four solid stars and one empty star */
+    content: "\2605\2605\2605\2605\2606"; /* 4 solid */
+}
+[data-rating="5"]::before {
+    content: "\2605\2605\2605\2605\2605"; /* 5 solid */
 }
 
-[data-rating="5"]::before {
-    content: "\2605\2605\2605\2605\2605"; /* Unicode characters for five solid stars */
-}
 .linkedin{
     display: inline-block;
     text-decoration: none;
