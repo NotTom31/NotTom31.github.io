@@ -11,6 +11,10 @@
     <script src="https://kit.fontawesome.com/a371e139f0.js" crossorigin="anonymous"></script>
 </head>
 <body>
+    <div class="down-arrow" onclick="scrollDown()">
+        <i class="fa-solid fa-chevron-down fa-2xl"></i>
+    </div>
+
     <section class="header">
         <nav>
             <!--<a href="index.html"><img src="images/logo.png" alt=""></a>-->
@@ -35,9 +39,6 @@
                 <a href="https://tommezzie.itch.io/" target="_blank" class="itch"><i class="fa fa-brands fa-itch-io fa"></i></a>
                 <a href="https://www.youtube.com/channel/UC6MP9yIiMVzyXtygz9Aq2Pg" target="_blank" class="youtube"><i class="fa-brands fa-youtube"></i></a>
             </ul>
-        </div>
-        <div class="down-arrow" onclick="scrollDown()">
-            <i class="fa-solid fa-chevron-down fa-2xl"></i>
         </div>
     </section>
 
@@ -231,29 +232,31 @@
 
 <!--design-->
 
-    <section id="design" class="header">
-        <div class="design-text-box">
-            <h1>Design</h1>
-            <p>Level design is something I've been passionate about since before I knew it was even a job. 
-                My journey in game making started early on by making adventure maps and constructing cities and castles in Minecraft. 
-                I delved into Super Mario 64 romhacking and level design in Mario Maker before creating my first game using Construct during high school. 
-                Throughout college, I learned to work with Unity and Unreal's terrain tools and UI systems. </p>
-        </div>
-        <div class="design-images">
-            <ul>
-                <li>
-                    <p>CrystalPunk Level</p>
-                    <img src="images/crystalpunk-level2.png" alt="image" class="image">
-                </li>
-                <li>
-                    <p>MechroKnights UI w/ keyboard and controller support</p>
-                    <img src="images/ui-vid.gif" alt="image" class="image">
-                </li>
-                <li>
-                    <p>Minecraft castle showing my early interest in level design</p>
-                    <img src="images/minecraft-castle.png" alt="image" class="image">
-                </li>
-            </ul>
+    <section id="design">
+        <div class="design-section">
+            <div class="design-text-box">
+                <h1>Design</h1>
+                <p>Level design is something I've been passionate about since before I knew it was even a job. 
+                    My journey in game making started early on by making adventure maps and constructing cities and castles in Minecraft. 
+                    I delved into Super Mario 64 romhacking and level design in Mario Maker before creating my first game using Construct during high school. 
+                    Throughout college, I learned to work with Unity and Unreal's terrain tools and UI systems. </p>
+            </div>
+                <div class="design-images">
+                    <ul>
+                        <li>
+                            <p>CrystalPunk Level</p>
+                            <img src="images/crystalpunk-level2.png" alt="image" class="image">
+                        </li>
+                        <li>
+                            <p>MechroKnights UI w/ keyboard and controller support</p>
+                            <img src="images/ui-vid.gif" alt="image" class="image">
+                        </li>
+                        <li>
+                            <p>Minecraft castle showing my early interest in level design</p>
+                            <img src="images/minecraft-castle.png" alt="image" class="image">
+                        </li>
+                    </ul>
+            </div>
         </div>
 
     </section>
@@ -296,16 +299,16 @@
         const aboutMeSection = document.querySelector('.aboutme');
         const resumeSection = document.querySelector('.resume-section');
         const projectsSection = document.querySelector('.projects-header');
-        const designSection = document.querySelector('.design-text-box');
+        const designSection = document.querySelector('.design-section');
         const homeTab = document.querySelector('.home-tab');
         const downArrow = document.querySelector('.down-arrow');
 
         const sections = [
-        { section: document.querySelector('.header'), tab: document.querySelector('.home-tab') },
-        { section: aboutMeSection, tab: document.querySelector('.about-tab') },
-        { section: resumeSection, tab: document.querySelector('.resume-tab') },
-        { section: projectsSection, tab: document.querySelector('.projects-tab') },
-        { section: designSection, tab: document.querySelector('.design-tab') },
+            { section: document.querySelector('.header'), tab: document.querySelector('.home-tab') },
+            { section: aboutMeSection, tab: document.querySelector('.about-tab') },
+            { section: resumeSection, tab: document.querySelector('.resume-tab') },
+            { section: projectsSection, tab: document.querySelector('.projects-tab') },
+            { section: designSection, tab: document.querySelector('.design-tab') },
         ];
 
         sections.forEach(({ section, tab }) => {
@@ -324,22 +327,22 @@
         }
 
         if (isElementPartiallyInViewport(designSection, 50)) {
-            // Rotate the down arrow
-            downArrow.style.transform = 'rotate(180deg)';
-            
+            // Add the 'rotated' class
+            downArrow.classList.add('rotated');
+
             // Change the behavior to scroll back to the home section
-            downArrow.onclick = function() {
+            downArrow.onclick = function () {
                 window.scrollTo({
                     top: 0,
                     behavior: 'smooth'
                 });
             };
         } else {
-            // Reset the down arrow to its default state
-            downArrow.style.transform = 'rotate(0deg)';
-            
+            // Remove the 'rotated' class
+            downArrow.classList.remove('rotated');
+
             // Change the behavior to scroll down
-            downArrow.onclick = function() {
+            downArrow.onclick = function () {
                 scrollDown();
             };
         }
