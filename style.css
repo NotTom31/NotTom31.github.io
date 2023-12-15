@@ -541,4 +541,10 @@ nav .fa{
     .design-images li {
         text-align: center; /* Center text horizontally */
     }
+    .description-panel img:hover{
+        transform: scale(1); 
+    }
+    .design-images li:hover {
+        transform: scale(1); 
+    }
 }
