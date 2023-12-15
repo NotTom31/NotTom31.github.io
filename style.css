@@ -127,6 +127,7 @@ nav{
 }
 .text-box h1{
     font-size: 80px;
+    font-family: 'League Spartan', sans-serif;
 }
 .text-box p{
     margin: 0px 0 0px;
@@ -156,22 +157,21 @@ nav{
     font-family: 'Roboto', sans-serif;
 }
 .about-text-box{
-    width: 60%;
+    width: auto;
+    padding-left: 10px;
+    padding-right: 10px;
     color: #fff;
     position: absolute;
     top: 50%;
     left: 50%;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
+    border-radius: 7px;
     transform: translate(-50%, -50%);
-    background-color: #1f1f1fc7;
+    background-color: #1f1f1fda;
     text-align: center;
 }
 .about-text-box h1{
     font-size: 80px;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'League Spartan', sans-serif;
 }
 .about-text-box p{
     margin: 10px;
@@ -297,7 +297,7 @@ nav .fa{
 
 
 .projects{
-    width: 90%;
+    width: 100%;
     color: #ffffff;
     position: relative;
     top: 50%;
@@ -307,7 +307,10 @@ nav .fa{
 }
 .projects h1{
     font-size: 50px;
-    transform: translate(0%, 50%);
+    padding-top: 3%;
+}
+.projects h2{
+    font-size: 35px;
 }
 .projects li{
     list-style: none;
@@ -325,6 +328,8 @@ nav .fa{
     padding-bottom: 20px;
     text-align: left;
     font-size: 17px;
+    display: flex;
+    flex-direction: column;
     
 }
 .description-panel p{
