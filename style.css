@@ -392,7 +392,7 @@ nav .fa{
     transition: transform 0.2s ease-in-out;
 }
 .description-panel img:hover{
-    transform: scale(1.4); 
+    transform: scale(1.1); 
 }
 
 .design-images {
@@ -431,7 +431,7 @@ nav .fa{
 }
 
 .design-images li:hover {
-    transform: scale(1.4); 
+    transform: scale(1.1); 
 }
 
 
