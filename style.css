@@ -389,6 +389,7 @@ nav .fa{
     margin-top: 20px; 
 }
 .description-panel img{
+    cursor: pointer;
     transition: transform 0.2s ease-in-out;
 }
 .description-panel img:hover{
@@ -421,6 +422,7 @@ nav .fa{
     max-width: 100%;
     height: auto;
     max-height: 300px;
+    cursor: pointer;
     transition: transform 0.2s ease-in-out;
 }
 .design-images p {
