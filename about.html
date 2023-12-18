@@ -3,113 +3,113 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tom Mezzie</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Dhurjati&display=swap" rel="stylesheet">
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <title>Image Grid</title>
     <style>
-        .header .nav-links ul li.about-tab {
-            background-color: #758294;
-            border-bottom-left-radius: 5px;
-            border-bottom-right-radius: 5px;
-            border-top-left-radius: 5px;
-            border-top-right-radius: 5px;
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            grid-gap: 20px;
+            justify-content: center;
+            overflow-y: auto;
+            max-height: 600px;
+        }
+
+        .image-item {
+            text-align: center;
+            position: relative;
+        }
+
+        .image-item img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .image-description {
+            margin-top: 15px;
+            font-size: 16px;
+            color: #555;
+        }
+
+        .fullscreen-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 999;
+        }
+
+        .fullscreen-content {
+            text-align: center;
+            color: #fff;
+        }
+
+        .fullscreen-image {
+            max-width: 90%; 
+            max-height: 90vh; 
+            border-radius: 8px;
         }
     </style>
 </head>
 <body>
-    <section class="header">
-        <nav>
-            <!--<a href="index.html"><img src="images/logo.png" alt=""></a>-->
-            <div class="nav-links" id="navLinks">
-                <i class="fa fa-times" onclick="hideMenu()"></i>
-                <ul>
-                    <li class="home-tab"><a href="index.html">Home</a></li>
-                    <li class="about-tab"><a href="about.html">About</a></li>
-                    <li class="resume-tab"><a href="resume.html">Resume</a></li>
-                    <li class="projects-tab"><a href="projects.html">Projects</a></li>
-                    <li class="design-tab"><a href="design.html">Design</a></li>
-                </ul>
+    <div class="container">
+        <div class="image-grid">
+            <div class="image-item">
+                <img src="images/crystalpunk-gameplay.gif" alt="Image 1" onclick="openFullscreen(this)">
+                <div class="image-description">Description for Image 1 Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
             </div>
-            <i class="fa fa-bars" id="bars" onclick="showMenu()"></i>
-        </nav>
-        <div class="about-text-box">
-            <h1>Tom Mezzie</h1>
-            <p>Game Developer and Designer</p>
+            <div class="image-item">
+                <img src="images/banner.png" alt="Image 1" onclick="openFullscreen(this)">
+                <div class="image-description">Description for Image 2 Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+            </div>
+            <!-- Add more image items as needed -->
         </div>
+    </div>
 
-    </section>
+    <!-- Fullscreen overlay -->
+    <div class="fullscreen-overlay" onclick="closeFullscreen()">
+        <div class="fullscreen-content">
+            <img class="fullscreen-image" src="" alt="Fullscreen Image">
+            <div class="image-description">Description goes here</div>
+        </div>
+    </div>
 
-    <!--stuff-->
+    <script>
+        function openFullscreen(element) {
+            const fullscreenOverlay = document.querySelector('.fullscreen-overlay');
+            const fullscreenImage = document.querySelector('.fullscreen-image');
+            const fullscreenDescription = document.querySelector('.fullscreen-overlay .image-description');
 
-
-<!--Toggle Menu-->
-<script>
-    var navLinks = document.getElementById("navLinks");
-    var bars = document.getElementById("bars");
-
-    function showMenu() {
-        navLinks.style.display = "block";
-        bars.style.display = "none";
-        navLinks.style.right = "0";
-    }
-
-    function hideMenu() {
-        navLinks.style.right = "-300px";
-        bars.style.display = "block";
-        setTimeout(function () {
-            navLinks.style.display = "none";
-        }, 500);
-    }
-
-    function scrollDown() {
-        window.scrollBy({
-            top: window.innerHeight,
-            behavior: 'smooth'
-        });
-    }
-
-    function checkWindowSize() {
-        // Check window width and set nav-links display to block if greater than 700
-        if (window.innerWidth > 700) {
-            navLinks.style.display = "block";
+            fullscreenImage.src = element.src;
+            fullscreenDescription.innerHTML = element.nextElementSibling.innerHTML;
+            fullscreenOverlay.style.display = 'flex';
         }
-    }
 
-    function handleScroll() {
-        const aboutMeSection = document.querySelector('.aboutme');
-
-        if (isElementInViewport(aboutMeSection)) {
-            aboutMeSection.classList.add('visible');
-        } else {
-            aboutMeSection.classList.remove('visible');
+        function closeFullscreen() {
+            const fullscreenOverlay = document.querySelector('.fullscreen-overlay');
+            fullscreenOverlay.style.display = 'none';
         }
-    }
-
-    document.addEventListener('scroll', handleScroll);
-    window.addEventListener('resize', checkWindowSize);
-
-    handleScroll();
-    checkWindowSize();
-
-    function isElementInViewport(el) {
-        const rect = el.getBoundingClientRect();
-        return (
-            rect.top >= 0 &&
-            rect.left >= 0 &&
-            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-            rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-        );
-    }
-
-    function scrollDown() {
-        window.scrollBy({
-            top: window.innerHeight,
-            behavior: 'smooth'
-        });
-    }
-</script>
+    </script>
 </body>
 </html>

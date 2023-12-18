@@ -245,21 +245,41 @@
                     I delved into Super Mario 64 romhacking and level design in Mario Maker before creating my first game using Construct during high school. 
                     Throughout college, I learned to work with Unity and Unreal's terrain tools and UI systems. </p>
             </div>
-                <div class="design-images">
-                    <ul>
-                        <li>
-                            <p>CrystalPunk Level</p>
-                            <img src="images/crystalpunk-level2.png" alt="image" class="image">
-                        </li>
-                        <li>
-                            <p>MechroKnights UI w/ keyboard and controller support</p>
-                            <img src="images/ui-vid.gif" alt="image" class="image">
-                        </li>
-                        <li>
-                            <p>Minecraft castle showing my early interest in level design</p>
-                            <img src="images/minecraft-castle.png" alt="image" class="image">
-                        </li>
-                    </ul>
+
+
+            <div class="container">
+                <p>Click Image to Expand</p>
+                <div class="image-grid">
+                    <div class="image-item">
+                        <img src="images/banner.png" alt="Image 1" onclick="openFullscreen(this)">
+                        <div class="image-description">MechroKnights Level</div>
+                    </div>
+                    <div class="image-item">
+                        <img src="images/crystalpunk-level2.png" alt="Image 2" onclick="openFullscreen(this)">
+                        <div class="image-description">CrystalPunk Level</div>
+                    </div>
+                    <div class="image-item">
+                        <img src="images/ui-vid.gif" alt="Image 3" onclick="openFullscreen(this)">
+                        <div class="image-description">MechroKnights UI with keyboard and controller support</div>
+                    </div>
+                    <div class="image-item">
+                        <img src="images/banner5new.png" alt="Image 4" onclick="openFullscreen(this)">
+                        <div class="image-description">ChromaThoth level 1 boss fight</div>
+                    </div>
+                    <div class="image-item">
+                        <img src="images/minecraft-castle.png" alt="Image 5" onclick="openFullscreen(this)">
+                        <div class="image-description">Minecraft castle showing my early interest in level design</div>
+                    </div>
+                </div>
+            </div>
+        
+            <!-- Fullscreen overlay -->
+            <div class="fullscreen-overlay" onclick="closeFullscreen()">
+                <div class="fullscreen-content">
+                    <img class="fullscreen-image" src="" alt="Fullscreen Image">
+                    <span class="close-button" onclick="closeFullscreen()"><i class="fas fa-times"></i></span>
+                    <div class="image-description">Description goes here</div>
+                </div>
             </div>
         </div>
 
@@ -328,6 +348,13 @@
             aboutMeSection.classList.add('visible');
         } else {
             aboutMeSection.classList.remove('visible');
+        }
+
+        // Toggle the opacity for the aboutme section
+        if (isElementPartiallyInViewport(resumeSection, 50)) {
+            resumeSection.classList.add('visible');
+        } else {
+            resumeSection.classList.remove('visible');
         }
 
         if (isElementPartiallyInViewport(designSection, 50)) {
@@ -439,6 +466,27 @@
             });
         });
     });
+
+    document.addEventListener("DOMContentLoaded", function () {
+            const fullscreenOverlay = document.querySelector('.fullscreen-overlay');
+            fullscreenOverlay.style.display = 'none';
+        });
+
+    function openFullscreen(element) {
+            const fullscreenOverlay = document.querySelector('.fullscreen-overlay');
+            const fullscreenImage = document.querySelector('.fullscreen-image');
+            const fullscreenDescription = document.querySelector('.fullscreen-overlay .image-description');
+
+            fullscreenImage.src = element.src;
+            fullscreenDescription.innerHTML = element.nextElementSibling.innerHTML;
+            fullscreenOverlay.style.display = 'flex';
+        }
+
+        function closeFullscreen() {
+            const fullscreenOverlay = document.querySelector('.fullscreen-overlay');
+            fullscreenOverlay.style.display = 'none';
+        }
+
 </script>
 </body>
 </html>
