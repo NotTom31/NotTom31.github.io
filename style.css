@@ -149,6 +149,7 @@ nav{
 }
 .design-text-box h1{
     font-size: 80px;
+    font-family: 'League Spartan', sans-serif;
 }
 .design-text-box p{
     margin: 0px 0 0px;
@@ -322,9 +323,11 @@ nav .fa{
 .projects h1{
     font-size: 50px;
     padding-top: 3%;
+    font-family: 'League Spartan', sans-serif;
 }
 .projects h2{
     font-size: 35px;
+    font-family: 'League Spartan', sans-serif;
 }
 .projects li{
     list-style: none;
