@@ -9,7 +9,11 @@ This is my website, more info soon to come
 
 
 # Asset Credits:
+
 Fonts: 
+
 **_Font Awesome_**
+
 **_League Spartan_**
+
 **_Roboto_**
