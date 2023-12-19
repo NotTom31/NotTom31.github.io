@@ -1,4 +1,4 @@
-# [Portfolio Website](https://tommezzie.com/))
+# [Portfolio Website](https://tommezzie.com/)
 This is my website, more info soon to come
 
 
