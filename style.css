@@ -21,7 +21,7 @@
 }
 .header #bars {
     position: fixed;
-    z-index: 1001;
+    z-index: 1099;
     top: 10px;
     right: 10px;
     cursor: pointer;
@@ -182,66 +182,25 @@ nav{
     color: #fff;
     font-family: 'Roboto', sans-serif;
 }
-.linkedin{
-    display: inline-block;
+.icon-link{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     text-decoration: none;
     color: #fff;
     border: 1px solid #fff;
-    padding: 10px 20px;
-    font-size: 17px;
+    width: 75px;
+    height: 50px;
+    justify-content: center;
+    text-align: center;
+    font-size: 25px;
+    border-radius: 4px;
     background: transparent;
     position: relative;
     cursor: pointer;
+    box-sizing: border-box;
 }
-.github{
-    display: inline-block;
-    text-decoration: none;
-    color: #fff;
-    border: 1px solid #fff;
-    padding: 10px 20px;
-    font-size: 17px;
-    background: transparent;
-    position: relative;
-    cursor: pointer;
-}
-.itch{
-    display: inline-block;
-    text-decoration: none;
-    color: #fff;
-    border: 1px solid #fff;
-    padding: 10px 20px;
-    font-size: 17px;
-    background: transparent;
-    position: relative;
-    cursor: pointer;
-}
-.youtube{
-    display: inline-block;
-    text-decoration: none;
-    color: #fff;
-    border: 1px solid #fff;
-    padding: 10px 20px;
-    font-size: 17px;
-    background: transparent;
-    position: relative;
-    cursor: pointer;
-}
-.linkedin:hover{
-    border: 1px solid #3688f4;
-    transition: 0.2s;
-    color: #3688f4;
-}
-.github:hover{
-    border: 1px solid #3688f4;
-    transition: 0.2s;
-    color: #3688f4;
-}
-.itch:hover{
-    border: 1px solid #3688f4;
-    transition: 0.2s;
-    color: #3688f4;
-}
-.youtube:hover{
+.icon-link:hover{
     border: 1px solid #3688f4;
     transition: 0.2s;
     color: #3688f4;
@@ -329,6 +288,11 @@ nav .fa{
     font-size: 35px;
     font-family: 'League Spartan', sans-serif;
 }
+.projects ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
 .projects li{
     list-style: none;
     display: inline-block;
@@ -342,24 +306,37 @@ nav .fa{
     border-bottom-right-radius: 10px;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
-    padding-bottom: 20px;
+    padding-bottom: 15px;
     text-align: left;
     font-size: 17px;
     display: flex;
     flex-direction: column;
     
 }
+.project-container iframe {
+    margin: 0 auto; 
+    display: block; 
+}
+.projects ul li {
+    display: flex;
+    align-items: stretch;
+}
 .description-panel p{
     font-family: 'Roboto', sans-serif;
-    padding-left: 7px;
+    text-align: center;
+    font-size: 16px;
+    padding-left: 2px;
 }
 .description-panel h4{
     font-family: 'Roboto', sans-serif;
     padding-left: 7px;
 }
 .description-panel img{
+    border-radius: 8px;
     display: block;
     margin: auto;
+    padding-top: 5px;
+    padding-bottom: 5px;
     max-width: 90%;
     height: auto;
 }
@@ -367,6 +344,7 @@ nav .fa{
     list-style-type: none;
     padding: 0;
     display: flex;
+    flex-direction: row;
     justify-content: center;
 }
 
@@ -374,7 +352,14 @@ nav .fa{
     display: flex;
     align-items: center;
     justify-content: center;
+    padding-top: 15px;
     margin: 0 -10px;
+}
+
+.description-panel ul li p{
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    padding-left: 2px;
 }
 .gameplay{
     float: right;
@@ -644,5 +629,8 @@ nav .fa{
     }
     .container {
         max-width: 100%;
+    }
+    .description-panel ul li p {
+        display: none;
     }
 }
