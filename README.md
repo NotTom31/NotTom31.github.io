@@ -17,3 +17,5 @@ Fonts:
 **_League Spartan_**
 
 **_Roboto_**
+
+**_Dhurjati_**
