@@ -313,9 +313,16 @@ nav .fa{
     flex-direction: column;
     
 }
-.project-container iframe {
+.new-iframe {
     margin: 0 auto; 
     display: block; 
+}
+.old-iframe{
+    margin: 0 auto; 
+    display: block;
+    /* width: 35%;
+    height: auto; */
+    
 }
 .projects ul li {
     display: flex;
@@ -551,7 +558,7 @@ nav .fa{
         position: relative;
         top: 50%;
         left: 50%;
-        transform: translate(-50%, 2%);
+        transform: translate(-50%, 0%);
         text-align: center;
     }
     .resume-section {
@@ -628,7 +635,7 @@ nav .fa{
         transform: scale(1); 
     }
     .container {
-        max-width: 100%;
+        max-width: 85%;
     }
     .description-panel ul li p {
         display: none;
