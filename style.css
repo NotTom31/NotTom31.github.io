@@ -301,7 +301,7 @@ nav .fa{
 }
 .project-container{
     
-    background-color: #1f1f1fc7;
+    background-color: #1f1f1fd8;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
     border-top-left-radius: 10px;
@@ -324,6 +324,9 @@ nav .fa{
     height: auto; */
     
 }
+.projects ul{
+    margin-top: auto;
+}
 .projects ul li {
     display: flex;
     align-items: stretch;
@@ -332,7 +335,8 @@ nav .fa{
     font-family: 'Roboto', sans-serif;
     text-align: center;
     font-size: 16px;
-    padding-left: 2px;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 .description-panel h4{
     font-family: 'Roboto', sans-serif;
@@ -347,7 +351,7 @@ nav .fa{
     max-width: 90%;
     height: auto;
 }
-.description-panel ul {
+.project-container ul {
     list-style-type: none;
     padding: 0;
     display: flex;
@@ -355,7 +359,7 @@ nav .fa{
     justify-content: center;
 }
 
-.description-panel ul li {
+.project-container ul li {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -363,7 +367,7 @@ nav .fa{
     margin: 0 -10px;
 }
 
-.description-panel ul li p{
+.project-container ul li p{
     font-family: 'Roboto', sans-serif;
     font-size: 20px;
     padding-left: 2px;
@@ -637,7 +641,7 @@ nav .fa{
     .container {
         max-width: 85%;
     }
-    .description-panel ul li p {
+    .project-container ul li p {
         display: none;
     }
 }
