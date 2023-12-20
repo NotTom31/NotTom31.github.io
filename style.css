@@ -87,7 +87,7 @@ nav{
     flex: 1;
     text-align: center;
     border: 1px solid #000;
-    background-color: #3688f444;
+    background-color: #3688f494;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
     border-top-left-radius: 5px;
@@ -589,15 +589,12 @@ nav .fa{
         font-size: 22px;
     }
 
-    .design-text-box {
-        width: 100%;
-        margin-top: 30px;
-        margin-bottom: 10px;
-        margin-left: 5%;
-        margin-right: 5%;
+    .design-text-box{
+        width: 90%;
+        padding-top: 5%;
+        color: #fff;
         position: relative;
-        left: 50%;
-        transform: translate(-50%, 0);
+        margin-bottom: 50px;
         text-align: center;
     }
 
