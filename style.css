@@ -227,7 +227,7 @@ nav .fa{
     align-items: center;
     position: fixed;
     z-index: 1001;
-    top: 92%;
+    bottom: 6%;
     left: 50%;
     transform: translate(-50%, -50%) scale(1.1);
     cursor: pointer;
@@ -457,6 +457,7 @@ nav .fa{
     grid-gap: 20px;
     justify-content: center;
     overflow-y: auto;
+    overflow-x: hidden;
     max-height: 600px;
 }
 
@@ -511,6 +512,10 @@ nav .fa{
     cursor: pointer;
     font-size: 40px;
     color: #fff;
+}
+
+.container p:before {
+    content: "Click Image to Expand";
 }
 
 @media (max-width: 700px) {
@@ -627,7 +632,7 @@ nav .fa{
         align-items: center;
     }
     .design-images li {
-        text-align: center; /* Center text horizontally */
+        text-align: center; 
     }
     .description-panel img:hover{
         transform: scale(1); 
@@ -643,5 +648,8 @@ nav .fa{
     }
     .icon-link{
         width: 50px;
+    }
+    .container p:before {
+        content: "Swipe to scroll";
     }
 }
