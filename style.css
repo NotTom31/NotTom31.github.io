@@ -641,4 +641,7 @@ nav .fa{
     .project-container ul li p {
         display: none;
     }
+    .icon-link{
+        width: 50px;
+    }
 }
