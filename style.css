@@ -14,7 +14,7 @@
 .aboutme{
     min-height: 100svh;
     width: 100%;
-    background-image: linear-gradient(rgba(4, 9, 30, 0.4), rgba(4,9,30,1)), url(images/banner3.png);
+    background-image: linear-gradient(rgba(4, 9, 30, 0.4), rgba(4,9,30,1)), url(images/AstralBladeLandscape1.png);
     background-position: center;
     background-size: cover;
     position: relative;
