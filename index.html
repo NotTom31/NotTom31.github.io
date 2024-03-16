@@ -78,8 +78,13 @@
                                 <h4>Project Lead, Gameplay Design and Programmer <br>
                                     Engine: Unreal 5.2
                                 </h4>
-                                <img src="images/chromathoth-gameplay.gif" alt="ChromaThoth Gameplay" onclick="openFullscreen(this)">
-                                <p>A wolf stumbles upon a mysterious space-born color that turns them into a monster. Now, they're on a mission to gain more of its power. <br>
+                                <div class="image-container">
+                                    <img src="images/chromathoth-gameplay.gif" alt="ChromaThoth Gameplay" onclick="openFullscreen(this)">
+                                    <div class="image-panel">
+                                        <p><i class="fa-solid fa-users"></i>&nbsp;7&nbsp;&nbsp;<i class="fa-regular fa-clock"></i>&nbsp;2 weeks&nbsp;&nbsp;<i class="fa-solid fa-screwdriver-wrench"></i>&nbsp;Unreal (C++/Blueprint)&nbsp;&nbsp;</p>
+                                    </div>
+                                </div>
+                                <p class="description">A wolf stumbles upon a mysterious space-born color that turns them into a monster. Now, they're on a mission to gain more of its power. <br>
                                     Made for the Cosmic Horrors II game jam in 2 weeks.
                                 </p>
                             </div>
@@ -107,14 +112,18 @@
                     </li>
                     <li>
                         <div class="project-container">
-                            <iframe class="new-iframe" frameborder="0" src="https://itch.io/embed/2176030?linkback=true&amp;border_width=2&amp;bg_color=222222&amp;fg_color=eeeeee&amp;link_color=3688f4&amp;border_color=363636" width=60% height="169"></iframe>
                             <div class="description-panel">
-                                
+                                <h2>MechroKnights (2023)</h2>
                                 <h4>Project Co-Lead, Level Design, UI, Programmer <br>
                                     Engine: Unity3D
                                 </h4>
-                                <img src="images/mechroknights-gameplay.gif" alt="MechroKnights Gameplay" onclick="openFullscreen(this)">
-                                <p>MechroKnights is a first person 1v1 mech fighting game with a medieval twist. Board your machine and defeat your foe in the arena to prove yourself to be a true warrior... a MechroKnight! <br>
+                                <div class="image-container">
+                                    <img src="images/mechroknights-gameplay.gif" alt="MechroKnights Gameplay" onclick="openFullscreen(this)">
+                                    <div class="image-panel">
+                                        <p><i class="fa-solid fa-users"></i>&nbsp;5&nbsp;&nbsp;<i class="fa-regular fa-clock"></i>&nbsp;2 weeks&nbsp;&nbsp;<i class="fa-solid fa-screwdriver-wrench"></i>&nbsp;Unity (C#)&nbsp;&nbsp;</p>
+                                    </div>
+                                </div>
+                                <p class="description">MechroKnights is a first person 1v1 mech fighting game with a medieval twist. Board your machine and defeat your foe in the arena to prove yourself to be a true warrior... a MechroKnight! <br>
                                     Made for the Mech Jam IV game jam in 2 weeks.
                                 </p>
                             </div>
@@ -142,14 +151,18 @@
                     </li>
                     <li>
                         <div class="project-container">
-                            <iframe class="new-iframe" frameborder="0" src="https://itch.io/embed/2136262?linkback=true&amp;border_width=2&amp;bg_color=222222&amp;fg_color=eeeeee&amp;link_color=3688f4&amp;border_color=363636" width=60% height="169"></iframe>
                             <div class="description-panel">
-                                
+                                <h2>CrystalPunk (2023)</h2>
                                 <h4>Project Co-Lead, Game/Graphics Programmer, UI, Level Design<br>
                                     Engine: Unity3D
                                 </h4>
-                                <img src="images/crystalpunk-gameplay.gif" alt="CrystalPunk Gameplay" onclick="openFullscreen(this)">
-                                <p>A 3rd person platform shooter made in Unity. My first attempt at a 3D game. I decided to make my character controller from scratch to better understand how they function, 
+                                <div class="image-container">
+                                    <img src="images/crystalpunk-gameplay.gif" alt="CrystalPunk Gameplay" onclick="openFullscreen(this)">
+                                    <div class="image-panel">
+                                        <p><i class="fa-solid fa-users"></i>&nbsp;5&nbsp;&nbsp;<i class="fa-regular fa-clock"></i>&nbsp;2 weeks&nbsp;&nbsp;<i class="fa-solid fa-screwdriver-wrench"></i>&nbsp;Unity (C#)&nbsp;&nbsp;</p>
+                                    </div>
+                                </div>
+                                <p class="description">A 3rd person platform shooter made in Unity. My first attempt at a 3D game. I decided to make my character controller from scratch to better understand how they function, 
                                     which taught me a lot more than if I used a pre-made movement system. 
                                 </p>
                             </div>
@@ -224,15 +237,16 @@
                         <img src="images/minecraft-castle.png" alt="Image 6" onclick="openFullscreen(this)">
                         <div class="image-description">Minecraft castle showing my early interest in level design</div>
                     </div>
-                </div>
+                </div>                
+                
             </div>
         
             <!-- Fullscreen overlay -->
             <div class="fullscreen-overlay" onclick="closeFullscreen()">
+                <img class="fullscreen-image" src="" alt="">
                 <div class="fullscreen-content">
-                    <img class="fullscreen-image" src="" alt="Fullscreen Image">
-                    <span class="close-button" onclick="closeFullscreen()"><i class="fas fa-times"></i></span>
-                    <div class="image-description">Description goes here</div>
+                    <div class="fullscreen-description"></div>
+                    <p class="fullscreen-paragraph"></p>
                 </div>
             </div>
         </div>
@@ -422,24 +436,27 @@
     });
 
     document.addEventListener("DOMContentLoaded", function () {
-            const fullscreenOverlay = document.querySelector('.fullscreen-overlay');
-            fullscreenOverlay.style.display = 'none';
-        });
+        const fullscreenOverlay = document.querySelector('.fullscreen-overlay');
+        fullscreenOverlay.style.display = 'none';
+    });
 
     function openFullscreen(element) {
-            const fullscreenOverlay = document.querySelector('.fullscreen-overlay');
-            const fullscreenImage = document.querySelector('.fullscreen-image');
-            const fullscreenDescription = document.querySelector('.fullscreen-overlay .image-description');
+        const fullscreenOverlay = document.querySelector('.fullscreen-overlay');
+        const fullscreenImage = document.querySelector('.fullscreen-image');
+        const fullscreenDescription = document.querySelector('.fullscreen-description');
+        const fullscreenParagraph = document.querySelector('.fullscreen-paragraph');
 
-            fullscreenImage.src = element.src;
-            fullscreenDescription.innerHTML = element.nextElementSibling.innerHTML;
-            fullscreenOverlay.style.display = 'flex';
-        }
+        fullscreenImage.src = element.src;
+        fullscreenDescription.innerHTML = element.closest('.description-panel').querySelector('.image-panel').innerHTML; // Include bar
+        fullscreenParagraph.innerHTML = element.closest('.description-panel').querySelector('.description').innerHTML; // Include paragraph
 
-        function closeFullscreen() {
-            const fullscreenOverlay = document.querySelector('.fullscreen-overlay');
-            fullscreenOverlay.style.display = 'none';
-        }
+        fullscreenOverlay.style.display = 'flex';
+    }
+
+    function closeFullscreen() {
+        const fullscreenOverlay = document.querySelector('.fullscreen-overlay');
+        fullscreenOverlay.style.display = 'none';
+    }
 
 </script>
 </body>
