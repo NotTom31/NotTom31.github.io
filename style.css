@@ -226,7 +226,7 @@ nav .fa{
     color: #fff;
     align-items: center;
     position: fixed;
-    z-index: 1001;
+    z-index: 1011;
     bottom: 6%;
     left: 50%;
     transform: translate(-50%, -50%) scale(1.1);
