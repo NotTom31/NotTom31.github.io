@@ -142,9 +142,10 @@ nav{
 }
 .design-text-box{
     width: 60%;
+    padding-top: 5%;
     color: #fff;
     position: relative;
-    margin-bottom: 50px;
+    margin-bottom: 0px;
     text-align: center;
 }
 .design-text-box h1{
@@ -276,7 +277,7 @@ nav .fa{
     position: relative;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, 0%);
+    transform: translate(-50%, 10%);
     text-align: center;
 }
 .projects h1{
