@@ -199,10 +199,10 @@
         <div class="design-section">
             <div class="design-text-box">
                 <h1>Design</h1>
-                <p>Level design is something I've been passionate about since before I knew it was even a job. 
+                <!-- <p>Level design is something I've been passionate about since before I knew it was even a job. 
                     My journey in game making started early on by making adventure maps and constructing cities and castles in Minecraft. 
                     I discovered my passion for creating games in high school, where I made games for Arduinos, Construct engine. 
-                    Throughout college, I learned to work with Unity and Unreal's terrain tools and UI systems. </p>
+                    Throughout college, I learned to work with Unity and Unreal's terrain tools and UI systems. </p> -->
             </div>
 
 
@@ -210,34 +210,35 @@
                 <p></p>
                 <div class="image-grid">
                     <div class="image-item">
-                        <img src="images/AstralBladeLandscape1.png" alt="Image 6" onclick="openFullscreen(this)">
+                        <img src="images/AstralBladeLandscape1.png" alt="Image 6" class="no-bar" onclick="openFullscreen(this)">
                         <div class="image-description">AstralBlade level. I created an auto-generating landscape material, which drastically sped up production and led to more intricate detailing that would have to be redone by hand otherwise.</div>
                     </div>
                     <div class="image-item">
-                        <img src="images/banner.png" alt="Image 1" onclick="openFullscreen(this)">
+                        <img src="images/banner.png" alt="Image 1" class="no-bar" onclick="openFullscreen(this)">
                         <div class="image-description">MechroKnights Level</div>
                     </div>
                     <div class="image-item">
-                        <img src="images/crystalpunk-level2.png" alt="Image 2" onclick="openFullscreen(this)">
+                        <img src="images/crystalpunk-level2.png" alt="Image 2" class="no-bar" onclick="openFullscreen(this)">
                         <div class="image-description">CrystalPunk Level</div>
                     </div>
                     <div class="image-item">
-                        <img src="images/Task_Breakdown.drawio.png" alt="Image 3" onclick="openFullscreen(this)">
+                        <img src="images/Task_Breakdown.drawio.png" alt="Image 3" class="no-bar" onclick="openFullscreen(this)">
                         <div class="image-description">Task Breakdown for MechroKnights</div>
                     </div>
                     <div class="image-item">
-                        <img src="images/ui-vid.gif" alt="Image 4" onclick="openFullscreen(this)">
+                        <img src="images/ui-vid.gif" alt="Image 4" class="no-bar" onclick="openFullscreen(this)">
                         <div class="image-description">MechroKnights UI with keyboard and controller support</div>
                     </div>
                     <div class="image-item">
-                        <img src="images/banner5newnew.png" alt="Image 5" onclick="openFullscreen(this)">
+                        <img src="images/banner5newnew.png" alt="Image 5" class="no-bar" onclick="openFullscreen(this)">
                         <div class="image-description">ChromaThoth level 1 boss fight</div>
                     </div>
                     <div class="image-item">
-                        <img src="images/minecraft-castle.png" alt="Image 6" onclick="openFullscreen(this)">
+                        <img src="images/minecraft-castle.png" alt="Image 6" class="no-bar" onclick="openFullscreen(this)">
                         <div class="image-description">Minecraft castle showing my early interest in level design</div>
                     </div>
-                </div>                
+                </div>
+                      
                 
             </div>
         
@@ -452,6 +453,8 @@
 
         fullscreenOverlay.style.display = 'flex';
     }
+
+
 
     function closeFullscreen() {
         const fullscreenOverlay = document.querySelector('.fullscreen-overlay');
