@@ -529,6 +529,7 @@ nav .fa{
   }
   
   .fullscreen-description {
+    display: none;
     background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white background for the description */
     padding: 10px;
     border-radius: 8px;
@@ -555,7 +556,7 @@ nav .fa{
     color: #fff;
 }
 
-.container p:before {
+.container .dynamic-text:before {
     content: "Click Image to Expand";
 }
 
@@ -690,7 +691,7 @@ nav .fa{
     .icon-link{
         width: 50px;
     }
-    .container p:before {
+    .container .dynamic-text:before {
         content: "Swipe to scroll";
     }
 }

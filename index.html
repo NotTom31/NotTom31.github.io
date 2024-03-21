@@ -47,9 +47,12 @@
         <div class="aboutme">
             <div class="profile-container">
                 <div class="about-text-box">
-                    <p>Gameplay Programmer from California, and I've been making games since 2016.
+                    <h1>Hi, I'm Tom! </h1>
+                    <p>I'm a Gameplay Programmer from California.
                         I graduated with my Bachelor's in Computer Systems: Game Development in May 2023. 
-                        I've worked in C++, C#, Unreal Blueprints, Python, JavaScript, and HTML/CSS.
+                        After college, I had the opportunity to work as a gameplay programmer for both HexFork and TrashFire Games,
+                        where I further honed my skills in AI, Player Mechanics, and Combat.
+                        I'm proficient in a range of programming languages, including C++, C#, Unreal Blueprints, Python, JavaScript, and HTML/CSS.
                         
                     </p>
                 </div>
@@ -209,36 +212,71 @@
 
 
             <div class="container">
-                <p></p>
+                <p class="dynamic-text"></p>
                 <div class="image-grid">
                     <div class="image-item">
-                        <img src="images/AstralBladeLandscape1.png" alt="Image 6" class="no-bar" onclick="openFullscreen(this)">
-                        <div class="image-description">AstralBlade level. I created an auto-generating landscape material, which drastically sped up production and led to more intricate detailing that would have to be redone by hand otherwise.</div>
+                        <div class="description-panel">
+                            <div class="image-container">
+                                <img src="images/AstralBladeLandscape1.png" alt="AstralBlade Level" class="no-bar" onclick="openFullscreen(this)">
+                            </div>
+                            <p class="description">AstralBlade level. I created an auto-generating landscape material, which drastically sped up production and led to more intricate detailing that would have to be redone by hand otherwise.</p>
+                        </div>
                     </div>
+                    
                     <div class="image-item">
-                        <img src="images/banner.png" alt="Image 1" class="no-bar" onclick="openFullscreen(this)">
-                        <div class="image-description">MechroKnights Level</div>
+                        <div class="description-panel">
+                            <div class="image-container">
+                                <img src="images/banner.png" alt="MechroKnights Level" class="no-bar" onclick="openFullscreen(this)">
+                            </div>
+                            <p class="description">MechroKnights Level</p>
+                        </div>
                     </div>
+                    
                     <div class="image-item">
-                        <img src="images/crystalpunk-level2.png" alt="Image 2" class="no-bar" onclick="openFullscreen(this)">
-                        <div class="image-description">CrystalPunk Level</div>
+                        <div class="description-panel">
+                            <div class="image-container">
+                                <img src="images/crystalpunk-level2.png" alt="CrystalPunk Level" class="no-bar" onclick="openFullscreen(this)">
+                            </div>
+                            <p class="description">CrystalPunk Level</p>
+                        </div>
                     </div>
+                    
                     <div class="image-item">
-                        <img src="images/Task_Breakdown.drawio.png" alt="Image 3" class="no-bar" onclick="openFullscreen(this)">
-                        <div class="image-description">Task Breakdown for MechroKnights</div>
+                        <div class="description-panel">
+                            <div class="image-container">
+                                <img src="images/Task_Breakdown.drawio.png" alt="Task Breakdown for MechroKnights" class="no-bar" onclick="openFullscreen(this)">
+                            </div>
+                            <p class="description">Task Breakdown for MechroKnights</p>
+                        </div>
                     </div>
+                    
                     <div class="image-item">
-                        <img src="images/ui-vid.gif" alt="Image 4" class="no-bar" onclick="openFullscreen(this)">
-                        <div class="image-description">MechroKnights UI with keyboard and controller support</div>
+                        <div class="description-panel">
+                            <div class="image-container">
+                                <img src="images/ui-vid.gif" alt="MechroKnights UI" class="no-bar" onclick="openFullscreen(this)">
+                            </div>
+                            <p class="description">MechroKnights UI with keyboard and controller support</p>
+                        </div>
                     </div>
+                    
                     <div class="image-item">
-                        <img src="images/banner5newnew.png" alt="Image 5" class="no-bar" onclick="openFullscreen(this)">
-                        <div class="image-description">ChromaThoth level 1 boss fight</div>
+                        <div class="description-panel">
+                            <div class="image-container">
+                                <img src="images/banner5newnew.png" alt="ChromaThoth Level 1 Boss Fight" class="no-bar" onclick="openFullscreen(this)">
+                            </div>
+                            <p class="description">ChromaThoth level 1 boss fight</p>
+                        </div>
                     </div>
+                    
                     <div class="image-item">
-                        <img src="images/minecraft-castle.png" alt="Image 6" class="no-bar" onclick="openFullscreen(this)">
-                        <div class="image-description">Minecraft castle showing my early interest in level design</div>
+                        <div class="description-panel">
+                            <div class="image-container">
+                                <img src="images/minecraft-castle.png" alt="Minecraft Castle" class="no-bar" onclick="openFullscreen(this)">
+                            </div>
+                            <p class="description">Minecraft castle showing my early interest in level design</p>
+                        </div>
                     </div>
+                    
                 </div>
                       
                 
@@ -444,17 +482,30 @@
     });
 
     function openFullscreen(element) {
-        const fullscreenOverlay = document.querySelector('.fullscreen-overlay');
-        const fullscreenImage = document.querySelector('.fullscreen-image');
-        const fullscreenDescription = document.querySelector('.fullscreen-description');
-        const fullscreenParagraph = document.querySelector('.fullscreen-paragraph');
+    const fullscreenOverlay = document.querySelector('.fullscreen-overlay');
+    const fullscreenImage = document.querySelector('.fullscreen-image');
+    const fullscreenDescription = document.querySelector('.fullscreen-description');
+    const fullscreenParagraph = document.querySelector('.fullscreen-paragraph');
 
-        fullscreenImage.src = element.src;
-        fullscreenDescription.innerHTML = element.closest('.description-panel').querySelector('.image-panel').innerHTML; // Include bar
-        fullscreenParagraph.innerHTML = element.closest('.description-panel').querySelector('.description').innerHTML; // Include paragraph
+    fullscreenImage.src = element.src;
 
-        fullscreenOverlay.style.display = 'flex';
+    // Check if image-panel exists
+    const imagePanel = element.closest('.description-panel').querySelector('.image-panel');
+    if (imagePanel) {
+        // Include bar if image-panel exists
+        fullscreenDescription.innerHTML = imagePanel.innerHTML;
+        fullscreenDescription.style.display = 'block';
+    } else {
+        // Include only image description paragraph if image-panel does not exist
+        fullscreenDescription.innerHTML = '';
+        fullscreenDescription.style.display = 'none';
     }
+
+    // Include paragraph
+    fullscreenParagraph.innerHTML = element.closest('.description-panel').querySelector('.description').innerHTML;
+
+    fullscreenOverlay.style.display = 'flex';
+}
 
 
 
