@@ -116,6 +116,10 @@ nav{
 .nav-links ul li:hover::after{
     width: 100%;
 }
+.project-link {
+    color: inherit; /* Inherit color from parent */
+    text-decoration: none; /* Remove default underline */
+}
 .text-box{
     width: 90%;
     color: #fff;
