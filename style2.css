@@ -1,0 +1,92 @@
+/* styles.css */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    padding: 10px 20px;
+    color: white;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+}
+
+.name {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.navigation {
+    display: flex;
+}
+
+.navigation a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 18px;
+}
+
+.navigation a:hover {
+    text-decoration: underline;
+}
+
+.about-me, .contact-me {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f9f9f9;
+    padding: 20px;
+    margin: 20px 0;
+}
+
+.about-me {
+    height: 90vh; /* 50% of the viewport height */
+}
+
+.contact-me {
+    height: auto; /* Auto height for content */
+}
+
+.content {
+    max-width: 600px;
+    text-align: center;
+}
+
+.about-me h1, .contact-me h1 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.about-me p, .contact-me p {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.links, .contact-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.links li, .contact-links li {
+    margin-bottom: 10px;
+}
+
+.links a, .contact-links a {
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.links a:hover, .contact-links a:hover {
+    text-decoration: underline;
+}

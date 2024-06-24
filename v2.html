@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tom Mezzie</title>
+    <link rel="stylesheet" href="style2.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dhurjati&family=League+Spartan&family=Roboto&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a371e139f0.js" crossorigin="anonymous"></script>
+</head>
+
+<body id="home">
+    <header class="top-bar">
+        <div class="name">Tom Mezzie</div>
+        <nav class="navigation">
+            <a href="#home">Home</a>
+            <a href="#portfolio">Portfolio</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+    <section class="about-me" id="about">
+        <div class="content">
+            <h1>About Me</h1>
+            <p>Hello! Im babbababab bab abab  ba babb abab a babb a bab ab  ab bab ab ab ab b  ba ba b ba ba bb b  bbab ba b a bb ab a b ba b.</p>
+            <p>Here are some of my links:</p>
+            <ul class="links">
+                <li><a href="https://github.com/yourprofile" target="_blank">GitHub</a></li>
+                <li><a href="https://linkedin.com/in/yourprofile" target="_blank">LinkedIn</a></li>
+                <li><a href="https://linkedin.com/in/yourprofile" target="_blank">YouTube</a></li>
+
+            </ul>
+        </div>
+    </section>
+    <section class="contact-me" id="contact">
+        <div class="content">
+            <h1>Contact Me</h1>
+            <p>If you'd like to get in touch, feel free to reach out via email or LinkedIn.</p>
+            <ul class="contact-links">
+                <li>Email: <a href="mailto:your.email@example.com">your.email@example.com</a></li>
+                <li>LinkedIn: <a href="https://linkedin.com/in/yourprofile" target="_blank">linkedin.com/in/yourprofile</a></li>
+            </ul>
+        </div>
+    </section>
+</body>
+
+
+</html>
+<script>
+    function showMenu() {
+        navLinks.style.display = "block";
+        bars.style.display = "none";
+        navLinks.style.right = "0";
+    }
+
+    function hideMenu() {
+        navLinks.style.right = "-300px";
+        bars.style.display = "block";
+        setTimeout(function () {
+            navLinks.style.display = "none";
+        }, 500);
+    }
+</script>
