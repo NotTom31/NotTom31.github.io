@@ -415,7 +415,7 @@ nav .fa{
     transform: scale(1.1); 
 }
 .image-container:hover .image-panel {
-    transform: translateX(-50%) scale(1.1);
+    transform: translateX(-50%) translateY(25%) scale(1.1);
   }
 
 .design-images {
