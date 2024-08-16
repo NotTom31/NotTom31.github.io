@@ -64,8 +64,8 @@
 
 <section id="projects" class="projects-header">
     <div class="projects">
-        <h1>Projects</h1>
-        <div>
+        <button class="arrow-button left-arrow" onclick="scrollLeft()">&#9664;</button>
+        <div class="projects-container">
             <ul>
                 <li>
                     <div class="project-container">
@@ -225,6 +225,7 @@
                 </li>
             </ul>
         </div>
+        <button class="arrow-button right-arrow" onclick="scrollRight()">&#9654;</button>
     </div>
 </section>
 
@@ -358,6 +359,20 @@
             top: window.innerHeight,
             behavior: 'smooth'
         });
+    }
+
+
+
+    function scrollRight() {
+        const container = document.querySelector('.projects-container');
+        console.log('Scrolling right');
+        container.scrollBy({ left: container.clientWidth, behavior: 'smooth' });
+    }
+
+    function scrollLeft() {
+        const container = document.querySelector('.projects-container');
+        console.log('Scrolling left');
+        container.scrollBy({ left: -container.clientWidth, behavior: 'smooth' });
     }
 
     function checkWindowSize() {
@@ -520,7 +535,7 @@
         fullscreenOverlay.style.display = 'none';
     });
 
-    function openFullscreen(element) {
+function openFullscreen(element) {
     const fullscreenOverlay = document.querySelector('.fullscreen-overlay');
     const fullscreenImage = document.querySelector('.fullscreen-image');
     const fullscreenDescription = document.querySelector('.fullscreen-description');
@@ -548,10 +563,10 @@
 
 
 
-    function closeFullscreen() {
-        const fullscreenOverlay = document.querySelector('.fullscreen-overlay');
-        fullscreenOverlay.style.display = 'none';
-    }
+function closeFullscreen() {
+    const fullscreenOverlay = document.querySelector('.fullscreen-overlay');
+    fullscreenOverlay.style.display = 'none';
+}
 
 </script>
 </body>

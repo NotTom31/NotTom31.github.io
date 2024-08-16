@@ -269,7 +269,26 @@ nav .fa{
     transform: translate(-50%, -50%);
     opacity: 1;
 }
+.projects-header {
+    position: relative;
+    width: 100%;
+    overflow: hidden; /* Hide horizontal scroll */
+    padding: 20px 0; /* Optional: Add padding around the section */
+}
 
+.projects {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+}
+
+.projects-container {
+    display: flex;
+    overflow: hidden; /* Prevent horizontal scrolling */
+    width: calc(100% - 60px); /* Adjust width to account for arrow buttons */
+}
 
 .projects{
     width: 100%;
@@ -293,17 +312,37 @@ nav .fa{
 }
 .projects ul {
     display: flex;
-    flex-wrap: nowrap;
-    justify-content: center;
-    overflow-x: auto;
-    margin-top: auto;
-}
-.projects li{
+    flex-direction: row;
+    margin: 0;
+    padding: 0;
     list-style: none;
-    display: inline-block;
+}
+
+.projects li {
+    list-style: none;
     padding: 10px 14px;
-    margin-right: 10px; /*space between containers*/
     position: relative;
+    flex: 0 0 auto;
+}
+
+.arrow-button {
+    background: #333;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+}
+
+.left-arrow {
+    left: 0;
+}
+
+.right-arrow {
+    right: 0;
 }
 .project-container{
     
