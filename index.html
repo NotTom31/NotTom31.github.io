@@ -64,7 +64,7 @@
 
 <section id="projects" class="projects-header">
     <div class="projects">
-        <button class="arrow-button left-arrow" onclick="scrollLeft()">&#9664;</button>
+        <button class="arrow-button left-arrow" onclick="scrollToLeft()">&#9664;</button>
         <div class="projects-container">
             <ul>
                 <li>
@@ -225,7 +225,7 @@
                 </li>
             </ul>
         </div>
-        <button class="arrow-button right-arrow" onclick="scrollRight()">&#9654;</button>
+        <button class="arrow-button right-arrow" onclick="scrollToRight()">&#9654;</button>
     </div>
 </section>
 
@@ -363,13 +363,13 @@
 
 
 
-    function scrollRight() {
+    function scrollToRight() {
         const container = document.querySelector('.projects-container');
         console.log('Scrolling right');
         container.scrollBy({ left: container.clientWidth, behavior: 'smooth' });
     }
 
-    function scrollLeft() {
+    function scrollToLeft() {
         const container = document.querySelector('.projects-container');
         console.log('Scrolling left');
         container.scrollBy({ left: -container.clientWidth, behavior: 'smooth' });
