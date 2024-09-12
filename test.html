@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carousel</title>
+    <link rel="stylesheet" href="stylestest.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dhurjati&family=League+Spartan&family=Roboto&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a371e139f0.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="carousel">
+        <button class="arrow left-arrow" onclick="move(-1)">&#10094;</button>
+        <div class="carousel-inner">
+            <div class="carousel-item">
+                <h2>An Eternity Gone By (2024)</h2>
+                <h4>Trashfire Games - Gameplay Programmer <br>
+                    Engine: Unity 2021
+                </h4>
+                <p class="description">An Eternity Gone By is a third-person hack-and-slash game with telekinesis abilities. 
+                    As a gameplay programmer, I developed three unique enemy types, some notable features include patrolling, object pooling, and attack selection based on player positioning.
+                </p>
+                <img src="images/AEGB.gif" alt="Image 1" onclick="openFullscreen(this)">
+                <ul>
+                    <li>
+                        <p>Itch.io: </p>
+                    </li>
+                    <li>
+                        <a href="https://trashfire-games.itch.io/an-eternity-gone-by" target="_blank" class="icon-link"><i class="fa-brands fa-itch-io"></i></a>
+                    </li>
+                    <li>
+                        <p>Gameplay:</p>
+                    </li>
+                    <li>
+                        <a href="https://www.youtube.com/watch?v=fG_UxokyG9k" target="_blank" class="icon-link"><i class="fa-brands fa-youtube"></i></a>
+                    </li>
+                    <li>
+                        <p>Steam:</p>
+                    </li>
+                    <li>
+                        <a href="https://store.steampowered.com/app/2735110/An_Eternity_Gone_By/" target="_blank" class="icon-link"><i class="fa-brands fa-square-steam"></i></a>
+                    </li>
+                </ul>
+            </div>
+            <div class="carousel-item">
+                <h1>Header 2</h1>
+                <p>This is a paragraph for the second item.</p>
+                <img src="images/AEGB.gif" alt="Image 2" onclick="openFullscreen(this)">
+            </div>
+            <div class="carousel-item">
+                <h1>Header 3</h1>
+                <p>This is a paragraph for the third item.</p>
+                <img src="images/AEGB.gif" alt="Image 3" onclick="openFullscreen(this)">
+            </div>
+            <div class="carousel-item">
+                <h1>Header 4</h1>
+                <p>This is a paragraph for the fourth item.</p>
+                <img src="images/AEGB.gif" alt="Image 4" onclick="openFullscreen(this)">
+            </div>
+        </div>
+        <button class="arrow right-arrow" onclick="move(1)">&#10095;</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+
+<script>
+let index = 0;
+const carouselInner = document.querySelector('.carousel-inner');
+const items = document.querySelectorAll('.carousel-item');
+const totalItems = items.length;
+let itemWidth = items[0].getBoundingClientRect().width;
+
+function move(direction) {
+    index = (index + direction + totalItems) % totalItems;
+    const offset = -index * itemWidth;
+    carouselInner.style.transform = `translateX(${offset}px)`;
+}
+
+function updateItemWidth() {
+    itemWidth = items[0].getBoundingClientRect().width;
+    const offset = -index * itemWidth;
+    carouselInner.style.transform = `translateX(${offset}px)`;
+}
+
+// Initial setup
+updateItemWidth();
+
+// Handle window resize
+window.addEventListener('resize', updateItemWidth);
+
+// Swipe handling
+let startX, endX;
+
+carouselInner.addEventListener('touchstart', (event) => {
+    startX = event.touches[0].clientX;
+});
+
+carouselInner.addEventListener('touchend', (event) => {
+    endX = event.changedTouches[0].clientX;
+    if (startX > endX + 50) {
+        move(1); // Swipe left
+    } else if (startX < endX - 50) {
+        move(-1); // Swipe right
+    }
+});
+
+</script>
