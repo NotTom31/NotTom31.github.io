@@ -3,18 +3,37 @@
     padding: 0;
     font-family: 'Dhurjati', sans-serif;
 }
+body {
+    background-color: rgba(4,9,30,1); 
+}
+.down-arrow{
+    color: #fff;
+    align-items: center;
+    position: fixed;
+    z-index: 1011;
+    bottom: 6%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1.1);
+    cursor: pointer;
+    transition: transform 0.1s ease-in-out;
+}
+.down-arrow:hover {
+    transform: translate(-50%, -50%) scaleY(1.4);
+    transform-origin: center;
+    color: #3688f4;
+}
+.down-arrow.rotated {
+    transform: translate(-50%, -50%) scale(1.1) rotate(180deg);
+}
+.down-arrow.rotated:hover {
+    transform: translate(-50%, -50%) scaleY(1.4) rotate(180deg);
+    transform-origin: center;
+    color: #3688f4;
+}
 .header{
     min-height: 100svh;
     width: 100%;
     background-image: linear-gradient(rgba(4, 9, 30, 0.4), rgba(4,9,30,1)), url(images/banner.png);
-    background-position: center;
-    background-size: cover;
-    position: relative;
-}
-.aboutme{
-    min-height: 100svh;
-    width: 100%;
-    background-image: linear-gradient(rgba(4, 9, 30, 0.4), rgba(4,9,30,1)), url(images/AstralBladeLandscape1.png);
     background-position: center;
     background-size: cover;
     position: relative;
@@ -26,59 +45,14 @@
     right: 10px;
     cursor: pointer;
 }
-.resume-header #bars {
-    position: fixed;
-    top: 10px;
-    right: 10px;
-    cursor: pointer;
-}
-.projects-header #bars {
-    position: fixed;
-    top: 10px;
-    right: 10px;
-    cursor: pointer;
-}
-body {
-    background-color: rgba(4,9,30,1); 
-}
-
-.resume-header{
-    min-height: 100svh;
-    width: 100%;
-    background-image: linear-gradient(rgba(4,9,30,0.4), rgba(4,9,30,1)), url(images/crystalpunk-level.png);
-    background-position: center;
-    background-size: cover;
-    position: relative;
-}
-.projects-header{
-    min-height: 100vh;
-    width: 100%;
-    background-image: linear-gradient(rgba(4,9,30,0.4), rgba(4,9,30,1)), url(images/banner5new.PNG);
-    background-position: center;
-    background-size: cover;
-    position: relative;
-}
-.design-section {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    min-height: 100svh;
-    width: 100%;
-    background-image: linear-gradient(rgba(4, 9, 30, 0.4), rgba(4,9,30,1)), url(images/banner4.png);
-    background-position: center;
-    background-size: cover;
-    position: relative;
-}
 nav{
     display: flex;
     padding: 2% 6%;
     justify-content: space-between;
     align-items: center;
 }
-.logo img {
-    width: 5%;
-    height: auto;
+nav .fa{
+    display: none;
 }
 .nav-links{
     display: block;
@@ -116,6 +90,13 @@ nav{
 .nav-links ul li:hover::after{
     width: 100%;
 }
+.nav-links ul li.active {
+    background-color: #758294;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
 .text-box{
     width: 90%;
     color: #fff;
@@ -137,26 +118,22 @@ nav{
 .text-box ul{
     font-size: 40px;
 }
-.design{
-    height: 100svh;
-}
-.design-text-box{
-    width: 60%;
-    padding-top: 5%;
-    color: #fff;
+
+/*START OF ABOUT ME*/
+.aboutme{
+    min-height: 100svh;
+    width: 100%;
+    background-image: linear-gradient(rgba(4, 9, 30, 0.4), rgba(4,9,30,1)), url(images/AstralBladeLandscape1.png);
+    background-position: center;
+    background-size: cover;
     position: relative;
-    margin-bottom: 0px;
-    text-align: center;
 }
-.design-text-box h1{
-    font-size: 80px;
-    font-family: 'League Spartan', sans-serif;
+.aboutme {
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
 }
-.design-text-box p{
-    margin: 0px 0 0px;
-    font-size: 25px;
-    color: #fff;
-    font-family: 'Roboto', sans-serif;
+.aboutme.visible {
+    opacity: 1;
 }
 .about-text-box{
     width: auto;
@@ -183,94 +160,23 @@ nav{
     color: #fff;
     font-family: 'Roboto', sans-serif;
 }
-.icon-link{
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    color: #fff;
-    border: 1px solid #fff;
-    width: 75px;
-    height: 50px;
-    justify-content: center;
-    text-align: center;
-    font-size: 25px;
-    border-radius: 4px;
-    background: transparent;
-    position: relative;
-    cursor: pointer;
-    box-sizing: border-box;
-}
-.icon-link:hover{
-    border: 1px solid #3688f4;
-    transition: 0.2s;
-    color: #3688f4;
-}
+/*END OF ABOUT ME*/
 
-nav .fa{
-    display: none;
-}
-
-.resume-section {
-    width: 90%;
-    max-height: 80%;
-    font-size: 30px;
-    color: #fff;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -45%);
-    text-align: center;
-}
-
-.down-arrow{
-    color: #fff;
-    align-items: center;
+/*START OF PROJECTS*/
+.projects-header #bars {
     position: fixed;
-    z-index: 1011;
-    bottom: 6%;
-    left: 50%;
-    transform: translate(-50%, -50%) scale(1.1);
+    top: 10px;
+    right: 10px;
     cursor: pointer;
-    transition: transform 0.1s ease-in-out;
 }
-.down-arrow:hover {
-    transform: translate(-50%, -50%) scaleY(1.4);
-    transform-origin: center;
-    color: #3688f4;
+.projects-header{
+    min-height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(4,9,30,0.4), rgba(4,9,30,1)), url(images/banner5new.PNG);
+    background-position: center;
+    background-size: cover;
+    position: relative;
 }
-.down-arrow.rotated {
-    transform: translate(-50%, -50%) scale(1.1) rotate(180deg);
-}
-.down-arrow.rotated:hover {
-    transform: translate(-50%, -50%) scaleY(1.4) rotate(180deg);
-    transform-origin: center;
-    color: #3688f4;
-}
-
-.aboutme {
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
-}
-
-.aboutme.visible {
-    opacity: 1;
-}
-
-
-.resume-section {
-    opacity: 0;
-    transition: opacity 1s ease-in-out, transform 1s ease-in-out;
-}
-
-.resume-section.visible {
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    opacity: 1;
-}
-
-
 .projects{
     width: 100%;
     color: #ffffff;
@@ -300,6 +206,13 @@ nav .fa{
     padding: 10px 14px;
     position: relative;
 }
+.projects ul{
+    margin-top: auto;
+}
+.projects ul li {
+    display: flex;
+    align-items: stretch;
+}
 .project-container{
     
     background-color: #1f1f1fd8;
@@ -314,42 +227,25 @@ nav .fa{
     flex-direction: column;
     
 }
-.new-iframe {
-    margin: 0 auto; 
-    display: block; 
-}
-.old-iframe{
-    margin: 0 auto; 
-    display: block;
-    /* width: 35%;
-    height: auto; */
-    
-}
-.projects ul{
-    margin-top: auto;
-}
-.projects ul li {
+.project-container ul {
+    list-style-type: none;
+    padding: 0;
     display: flex;
-    align-items: stretch;
+    flex-direction: row;
+    justify-content: center;
 }
-.image-container {
-    position: relative;
-    display: inline-block;
+.project-container ul li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 15px;
+    margin: 0 -10px;
 }
-  
-.image-panel {
-    position: absolute;
-    bottom: 0;
-    left: 50%; 
-    transform: translateX(-50%); 
-    width: 90%; /* Match the width of the image */
-    background-color: rgba(0, 0, 0, 0.7); 
-    color: #fff;
-    padding: 10px;
-    box-sizing: border-box;
-    border-radius: 0 0 8px 8px;
-    transition: transform 0.2s ease-in-out;
-  }
+.project-container ul li p{
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    padding-left: 2px;
+}
 .description-panel p{
     font-family: 'Roboto', sans-serif;
     text-align: center;
@@ -370,39 +266,6 @@ nav .fa{
     max-width: 90%;
     height: auto;
 }
-.project-container ul {
-    list-style-type: none;
-    padding: 0;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-}
-
-.project-container ul li {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding-top: 15px;
-    margin: 0 -10px;
-}
-
-.project-container ul li p{
-    font-family: 'Roboto', sans-serif;
-    font-size: 20px;
-    padding-left: 2px;
-}
-.gameplay{
-    float: right;
-}
-
-.nav-links ul li.active {
-    background-color: #758294;
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
-}
-
 .description-panel {
     width: 554px; 
     margin-top: 20px; 
@@ -414,10 +277,198 @@ nav .fa{
 .description-panel img:hover{
     transform: scale(1.1); 
 }
+.image-container {
+    position: relative;
+    display: inline-block;
+}
 .image-container:hover .image-panel {
     transform: translateX(-50%) translateY(25%) scale(1.1);
-  }
+}
+.image-panel {
+    position: absolute;
+    bottom: 0;
+    left: 50%; 
+    transform: translateX(-50%); 
+    width: 90%; /* Match the width of the image */
+    background-color: rgba(0, 0, 0, 0.7); 
+    color: #fff;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 0 0 8px 8px;
+    transition: transform 0.2s ease-in-out;
+}
+.icon-link{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: #fff;
+    border: 1px solid #fff;
+    width: 75px;
+    height: 50px;
+    justify-content: center;
+    text-align: center;
+    font-size: 25px;
+    border-radius: 4px;
+    background: transparent;
+    position: relative;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+.icon-link:hover{
+    border: 1px solid #3688f4;
+    transition: 0.2s;
+    color: #3688f4;
+}
 
+/*END OF PROJECTS*/
+
+/*START OF RESUME*/
+.resume-header #bars {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}
+.resume-header{
+    min-height: 100svh;
+    width: 100%;
+    background-image: linear-gradient(rgba(4,9,30,0.4), rgba(4,9,30,1)), url(images/crystalpunk-level.png);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+.resume-section {
+    width: 90%;
+    max-height: 80%;
+    font-size: 30px;
+    color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -45%);
+    text-align: center;
+}
+.resume-section {
+    opacity: 0;
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+}
+
+.resume-section.visible {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 1;
+}
+/*END OF RESUME*/
+
+/*START OF DESIGN*/
+.design{
+    height: 100svh;
+}
+.design-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100svh;
+    width: 100%;
+    background-image: linear-gradient(rgba(4, 9, 30, 0.4), rgba(4,9,30,1)), url(images/banner4.png);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+.design-text-box{
+    width: 60%;
+    padding-top: 5%;
+    color: #fff;
+    position: relative;
+    margin-bottom: 0px;
+    text-align: center;
+}
+.design-text-box h1{
+    font-size: 80px;
+    font-family: 'League Spartan', sans-serif;
+}
+.design-text-box p{
+    margin: 0px 0 0px;
+    font-size: 25px;
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
+}
+.container {
+    max-width: 55%;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #1f1f1fda;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+.container p{
+    text-align: center;
+    font-size: 25px;
+    color: #ffffff;
+}
+.container .dynamic-text:before {
+    content: "Click Image to Expand";
+}
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(325px, 1fr));
+    grid-gap: 20px;
+    justify-content: center;
+    overflow-y: auto;
+    overflow-x: hidden;
+    max-height: 600px;
+}
+.image-item {
+    text-align: center;
+    position: relative;
+}
+
+.image-item img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+
+/*END OF DESIGN*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*DELETE?????*/
+.logo img {
+    width: 5%;
+    height: auto;
+}
+.new-iframe {
+    margin: 0 auto; 
+    display: block; 
+}
+.old-iframe{
+    margin: 0 auto; 
+    display: block;
+    /* width: 35%;
+    height: auto; */
+}
+.gameplay{
+    float: right;
+}
 .design-images {
     display: flex;
     justify-content: center;
@@ -457,44 +508,12 @@ nav .fa{
 .design-images li:hover {
     transform: scale(1.1); 
 }
+/*DELETE?????*/
 
 
-.container {
-    max-width: 55%;
-    margin: 50px auto;
-    padding: 20px;
-    background-color: #1f1f1fda;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-}
-.container p{
-    text-align: center;
-    font-size: 25px;
-    color: #ffffff;
-}
 
-.image-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(325px, 1fr));
-    grid-gap: 20px;
-    justify-content: center;
-    overflow-y: auto;
-    overflow-x: hidden;
-    max-height: 600px;
-}
 
-.image-item {
-    text-align: center;
-    position: relative;
-}
-
-.image-item img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
-    cursor: pointer;
-}
-
+/*START FULLSCREEN*/
 .image-description {
     margin-top: 15px;
     font-size: 20px;
@@ -515,19 +534,16 @@ nav .fa{
     align-items: center;
     flex-direction: column;
   }
-  
+  .fullscreen-image {
+    max-width: 100%;
+    max-height: calc(100% - 40px); /* Adjust the height of the image container */
+  }
   .fullscreen-content {
     display: flex;
     flex-direction: column;
     max-width: 80%;
     max-height: 80%;
   }
-  
-  .fullscreen-image {
-    max-width: 100%;
-    max-height: calc(100% - 40px); /* Adjust the height of the image container */
-  }
-  
   .fullscreen-description {
     display: none;
     background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white background for the description */
@@ -545,6 +561,8 @@ nav .fa{
   .fullscreen-paragraph p {
     margin: 0;
   }
+
+  /*END FULLSCREEN*/
   
 
 .close-button {
@@ -556,9 +574,7 @@ nav .fa{
     color: #fff;
 }
 
-.container .dynamic-text:before {
-    content: "Click Image to Expand";
-}
+
 
 @media (max-width: 700px) {
     .description-panel {
