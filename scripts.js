@@ -34,11 +34,11 @@ function handleScroll() {
     const resumeSection = document.querySelector('.resume-section');
     const projectsSection = document.querySelector('.projects-header');
     const designSection = document.querySelector('.design-section');
-    const homeTab = document.querySelector('.home-tab');
+    const homeTab = document.querySelector('.header');
     const downArrow = document.querySelector('.down-arrow');
 
     const sections = [
-        { section: document.querySelector('.header'), tab: document.querySelector('.home-tab') },
+        { section: homeTab, tab: document.querySelector('.home-tab') },
         { section: aboutMeSection, tab: document.querySelector('.about-tab') },
         { section: resumeSection, tab: document.querySelector('.resume-tab') },
         { section: projectsSection, tab: document.querySelector('.projects-tab') },
