@@ -30,34 +30,63 @@ function checkWindowSize() {
 }
 
 function handleScroll() {
-const aboutMeSection = document.querySelector('.aboutme');
-const resumeSection = document.querySelector('.resume-section');
-const projectsSection = document.querySelector('.projects-header');
-const designSection = document.querySelector('.design-text-box');
-const homeTab = document.querySelector('.home-tab');
+    const aboutMeSection = document.querySelector('.aboutme');
+    const resumeSection = document.querySelector('.resume-section');
+    const projectsSection = document.querySelector('.projects-header');
+    const designSection = document.querySelector('.design-section');
+    const homeTab = document.querySelector('.home-tab');
+    const downArrow = document.querySelector('.down-arrow');
 
-const sections = [
-{ section: document.querySelector('.header'), tab: document.querySelector('.home-tab') },
-{ section: aboutMeSection, tab: document.querySelector('.about-tab') },
-{ section: resumeSection, tab: document.querySelector('.resume-tab') },
-{ section: projectsSection, tab: document.querySelector('.projects-tab') },
-{ section: designSection, tab: document.querySelector('.design-tab') },
-];
+    const sections = [
+        { section: document.querySelector('.header'), tab: document.querySelector('.home-tab') },
+        { section: aboutMeSection, tab: document.querySelector('.about-tab') },
+        { section: resumeSection, tab: document.querySelector('.resume-tab') },
+        { section: projectsSection, tab: document.querySelector('.projects-tab') },
+        { section: designSection, tab: document.querySelector('.design-tab') },
+    ];
 
-sections.forEach(({ section, tab }) => {
-    if (isElementPartiallyInViewport(section, 50)) {
-        tab.classList.add('active');
+    sections.forEach(({ section, tab }) => {
+        if (isElementPartiallyInViewport(section, 50)) {
+            tab.classList.add('active');
+        } else {
+            tab.classList.remove('active');
+        }
+    });
+
+    // Toggle the opacity for the aboutme section
+    if (isElementPartiallyInViewport(aboutMeSection, 50)) {
+        aboutMeSection.classList.add('visible');
     } else {
-        tab.classList.remove('active');
+        aboutMeSection.classList.remove('visible');
     }
-});
 
-// Toggle the opacity for the aboutme section
-if (isElementPartiallyInViewport(aboutMeSection, 50)) {
-    aboutMeSection.classList.add('visible');
-} else {
-    aboutMeSection.classList.remove('visible');
-}
+    // Toggle the opacity for the aboutme section
+    if (isElementPartiallyInViewport(resumeSection, 50)) {
+        resumeSection.classList.add('visible');
+    } else {
+        resumeSection.classList.remove('visible');
+    }
+
+    if (isElementPartiallyInViewport(designSection, 50)) {
+        // Add the 'rotated' class
+        downArrow.classList.add('rotated');
+
+        // Change the behavior to scroll back to the home section
+        downArrow.onclick = function () {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        };
+    } else {
+        // Remove the 'rotated' class
+        downArrow.classList.remove('rotated');
+
+        // Change the behavior to scroll down
+        downArrow.onclick = function () {
+            scrollDown();
+        };
+    }
 }
 
 document.addEventListener('scroll', handleScroll);
@@ -126,10 +155,20 @@ document.addEventListener('DOMContentLoaded', function () {
     const itchIframes = document.querySelectorAll('.project-container iframe');
 
     itchIframes.forEach(iframe => {
+        // Set initial size when the page loads
+        if (window.innerWidth <= 700) {
+            iframe.width = "100%";
+            iframe.height = "169";
+        } else {
+            iframe.width = "554";
+            iframe.height = "169";
+        }
+
+        // Update size on window resize
         window.addEventListener('resize', function () {
             if (window.innerWidth <= 700) {
-                iframe.width = "60%";
-                iframe.height = "200";
+                iframe.width = "100%";
+                iframe.height = "169";
             } else {
                 iframe.width = "554";
                 iframe.height = "169";
@@ -137,3 +176,41 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+    const fullscreenOverlay = document.querySelector('.fullscreen-overlay');
+    fullscreenOverlay.style.display = 'none';
+});
+
+function openFullscreen(element) {
+const fullscreenOverlay = document.querySelector('.fullscreen-overlay');
+const fullscreenImage = document.querySelector('.fullscreen-image');
+const fullscreenDescription = document.querySelector('.fullscreen-description');
+const fullscreenParagraph = document.querySelector('.fullscreen-paragraph');
+
+fullscreenImage.src = element.src;
+
+// Check if image-panel exists
+const imagePanel = element.closest('.description-panel').querySelector('.image-panel');
+if (imagePanel) {
+    // Include bar if image-panel exists
+    fullscreenDescription.innerHTML = imagePanel.innerHTML;
+    fullscreenDescription.style.display = 'block';
+} else {
+    // Include only image description paragraph if image-panel does not exist
+    fullscreenDescription.innerHTML = '';
+    fullscreenDescription.style.display = 'none';
+}
+
+// Include paragraph
+fullscreenParagraph.innerHTML = element.closest('.description-panel').querySelector('.description').innerHTML;
+
+fullscreenOverlay.style.display = 'flex';
+}
+
+
+
+function closeFullscreen() {
+    const fullscreenOverlay = document.querySelector('.fullscreen-overlay');
+    fullscreenOverlay.style.display = 'none';
+}
