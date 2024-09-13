@@ -5,91 +5,202 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Carousel</title>
     <link rel="stylesheet" href="stylestest.css">
+    <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Dhurjati&family=League+Spartan&family=Roboto&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/a371e139f0.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <div class="carousel">
-        <button class="arrow left-arrow" onclick="move(-1)">&#10094;</button>
-        <div class="carousel-inner">
-            <div class="carousel-item">
-                <h2>An Eternity Gone By (2024)</h2>
-                <h4>Trashfire Games - Gameplay Programmer <br>
-                    Engine: Unity 2021
-                </h4>
-                <p class="description">An Eternity Gone By is a third-person hack-and-slash game with telekinesis abilities. 
-                    As a gameplay programmer, I developed three unique enemy types, some notable features include patrolling, object pooling, and attack selection based on player positioning.
-                </p>
-                <img src="images/AEGB.gif" alt="Image 1" onclick="openFullscreen(this)">
-                <ul>
-                    <li>
-                        <p>Itch.io: </p>
-                    </li>
-                    <li>
-                        <a href="https://trashfire-games.itch.io/an-eternity-gone-by" target="_blank" class="icon-link"><i class="fa-brands fa-itch-io"></i></a>
-                    </li>
-                    <li>
-                        <p>Gameplay:</p>
-                    </li>
-                    <li>
-                        <a href="https://www.youtube.com/watch?v=fG_UxokyG9k" target="_blank" class="icon-link"><i class="fa-brands fa-youtube"></i></a>
-                    </li>
-                    <li>
-                        <p>Steam:</p>
-                    </li>
-                    <li>
-                        <a href="https://store.steampowered.com/app/2735110/An_Eternity_Gone_By/" target="_blank" class="icon-link"><i class="fa-brands fa-square-steam"></i></a>
-                    </li>
-                </ul>
+    <section>
+        <!-- Container for Project List and Carousel -->
+        <div class="carousel-container">
+            <!-- Dropdown for project names -->
+            <div class="dropdown">
+                <button class="dropbtn">Select Project</button>
+                <div class="dropdown-content">
+                    <a href="#" onclick="goToProject(0)">An Eternity Gone By (2024)</a>
+                    <a href="#" onclick="goToProject(1)">ChromaThoth (2023)</a>
+                    <a href="#" onclick="goToProject(2)">MechroKnights (2023)</a>
+                    <a href="#" onclick="goToProject(3)">CrystalPunk (2023)</a>
+                </div>
             </div>
-            <div class="carousel-item">
-                <h1>Header 2</h1>
-                <p>This is a paragraph for the second item.</p>
-                <img src="images/AEGB.gif" alt="Image 2" onclick="openFullscreen(this)">
-            </div>
-            <div class="carousel-item">
-                <h1>Header 3</h1>
-                <p>This is a paragraph for the third item.</p>
-                <img src="images/AEGB.gif" alt="Image 3" onclick="openFullscreen(this)">
-            </div>
-            <div class="carousel-item">
-                <h1>Header 4</h1>
-                <p>This is a paragraph for the fourth item.</p>
-                <img src="images/AEGB.gif" alt="Image 4" onclick="openFullscreen(this)">
+
+            <!-- Carousel Section -->
+            <div class="carousel">
+                <button class="arrow left-arrow" onclick="move(-1)">&#10094;</button>
+                <div class="carousel-inner">
+                    <div class="carousel-item">
+                        <div class="description-panel">
+                            <h2>An Eternity Gone By (2024)</h2>
+                            <h4>Trashfire Games - Gameplay Programmer <br>
+                                Engine: Unity 2021
+                            </h4>
+                            <div class="image-container">
+                                <img src="images/AEGB.gif" alt="ChromaThoth Gameplay" onclick="openFullscreen(this)">
+                                <div class="image-panel">
+                                    <p><i class="fa-solid fa-users"></i>&nbsp;25&nbsp;&nbsp;<i class="fa-regular fa-clock"></i>&nbsp;Jan 2024 - Current&nbsp;&nbsp;<i class="fa-solid fa-screwdriver-wrench"></i>&nbsp;Unity C#&nbsp;&nbsp;</p>
+                                </div>
+                            </div>
+                            <p class="description">An Eternity Gone By is a third-person hack-and-slash game with telekinesis abilities. 
+                                As a gameplay programmer, I developed three unique enemy types, some notable features include patrolling, object pooling, and attack selection based on player positioning.
+                            </p>
+                            <ul class="project-links">
+                                <li><p>Itch.io:</p></li>
+                                <li><a href="https://trashfire-games.itch.io/an-eternity-gone-by" target="_blank" class="icon-link"><i class="fa-brands fa-itch-io"></i></a></li>
+                                <li><p>Gameplay:</p></li>
+                                <li><a href="https://www.youtube.com/watch?v=fG_UxokyG9k" target="_blank" class="icon-link"><i class="fa-brands fa-youtube"></i></a></li>
+                                <li><p>Steam:</p></li>
+                                <li><a href="https://store.steampowered.com/app/2735110/An_Eternity_Gone_By/" target="_blank" class="icon-link"><i class="fa-brands fa-square-steam"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="description-panel">
+                            <h2>ChromaThoth (2023)</h2>
+                            <h4>Project Lead, Gameplay Design and Programmer <br>
+                                Engine: Unreal 5.2
+                            </h4>
+                            <div class="image-container">
+                                <img src="images/chromathoth-gameplay.gif" alt="ChromaThoth Gameplay" onclick="openFullscreen(this)">
+                                <div class="image-panel">
+                                    <p><i class="fa-solid fa-users"></i>&nbsp;7&nbsp;&nbsp;<i class="fa-regular fa-clock"></i>&nbsp;2 weeks&nbsp;&nbsp;<i class="fa-solid fa-screwdriver-wrench"></i>&nbsp;Unreal (C++/Blueprint)&nbsp;&nbsp;</p>
+                                </div>
+                            </div>
+                            <p class="description">A wolf stumbles upon a mysterious space-born color that turns them into a monster. Now, they're on a mission to gain more of its power. <br>
+                                Made for the Cosmic Horrors II game jam in 2 weeks.
+                            </p>
+                            <ul class="project-links">
+                                <li><p>Devlog: </p></li>
+                                <li><a href="https://tommezzie.itch.io/chromathoth/devlog" target="_blank" class="icon-link"><i class="fa-brands fa-dev"></i></a></li>
+                                <li><p>Gameplay:</p></li>
+                                <li><a href="https://www.youtube.com/watch?v=O7GwkMHiU3o" target="_blank" class="icon-link"><i class="fa-brands fa-youtube"></i></a></li>
+                                <li> <p>Repo:</p></li>
+                                <li><a href="https://github.com/NotTom31/ChromaThoth" target="_blank" class="icon-link"><i class="fa fa-brands fa-github"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="description-panel">
+                            <h2>MechroKnights (2023)</h2>
+                            <h4>Project Co-Lead, Level Design, UI, Programmer <br>
+                                Engine: Unity
+                            </h4>
+                            <div class="image-container">
+                                <img src="images/mechroknights-gameplay.gif" alt="MechroKnights Gameplay" onclick="openFullscreen(this)">
+                                <div class="image-panel">
+                                    <p><i class="fa-solid fa-users"></i>&nbsp;5&nbsp;&nbsp;<i class="fa-regular fa-clock"></i>&nbsp;2 weeks&nbsp;&nbsp;<i class="fa-solid fa-screwdriver-wrench"></i>&nbsp;Unity (C#)&nbsp;&nbsp;</p>
+                                </div>
+                            </div>
+                            <p class="description">MechroKnights is a first person 1v1 mech fighting game with a medieval twist. Board your machine and defeat your foe in the arena to prove yourself to be a true warrior... a MechroKnight! <br>
+                                Made for the Mech Jam IV game jam in 2 weeks.
+                            </p>
+                        </div>
+                        <ul class="project-links">
+                            <li><p>Devlog: </p></li>
+                            <li><a href="https://tommezzie.itch.io/mechroknights/devlog" target="_blank" class="icon-link"><i class="fa-brands fa-dev"></i></a></li>
+                            <li><p>Gameplay:</p></li>
+                            <li><a href="https://www.youtube.com/watch?v=awgPK_jVwSQ" target="_blank" class="icon-link"><i class="fa-brands fa-youtube"></i></a></li>
+                            <li><p>Repo:</p></li>
+                            <li><a href="https://github.com/NotTom31/MechroKnights" target="_blank" class="icon-link"><i class="fa fa-brands fa-github"></i></a></li>
+                        </ul>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="description-panel">
+                            <h2>CrystalPunk (2023)</h2>
+                            <h4>Project Co-Lead, Game/Graphics Programmer, UI, Level Design<br>
+                                Engine: Unity3D
+                            </h4>
+                            <div class="image-container">
+                                <img src="images/crystalpunk-gameplay.gif" alt="CrystalPunk Gameplay" onclick="openFullscreen(this)">
+                                <div class="image-panel">
+                                    <p><i class="fa-solid fa-users"></i>&nbsp;5&nbsp;&nbsp;<i class="fa-regular fa-clock"></i>&nbsp;2 months&nbsp;&nbsp;<i class="fa-solid fa-screwdriver-wrench"></i>&nbsp;Unity (C#)&nbsp;&nbsp;</p>
+                                </div>
+                            </div>
+                            <p class="description">A 3rd person platform shooter made in Unity. My first attempt at a 3D game. I decided to make my character controller from scratch to better understand how they function, 
+                                which taught me a lot more than if I used a pre-made movement system. 
+                            </p>
+                        </div>
+                        <ul class="project-links">
+                            <li><p>Devlog: </p></li>
+                            <li><a href="https://tommezzie.itch.io/crystalpunk-heart-of-steam/devlog" target="_blank" class="icon-link"><i class="fa-brands fa-dev"></i></a></li>
+                            <li><p>Gameplay:</p></li>
+                            <li><a href="https://www.youtube.com/watch?v=6dPeHHbQiG8" target="_blank" class="icon-link"><i class="fa-brands fa-youtube"></i></a></li>
+                            <li><p>Repo:</p></li>
+                            <li><a href="https://github.com/Ulibomber1/Crystalpunk-HoS" target="_blank" class="icon-link"><i class="fa fa-brands fa-github"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <button class="arrow right-arrow" onclick="move(1)">&#10095;</button>
             </div>
         </div>
-        <button class="arrow right-arrow" onclick="move(1)">&#10095;</button>
-    </div>
-    <script src="script.js"></script>
+
+    </section>
 </body>
 </html>
+
+
+
 
 <script>
 let index = 0;
 const carouselInner = document.querySelector('.carousel-inner');
 const items = document.querySelectorAll('.carousel-item');
 const totalItems = items.length;
+const carousel = document.querySelector('.carousel');
 let itemWidth = items[0].getBoundingClientRect().width;
+const padding = parseFloat(getComputedStyle(items[0]).marginLeft) + parseFloat(getComputedStyle(items[0]).marginRight);
 
-function move(direction) {
-    index = (index + direction + totalItems) % totalItems;
-    const offset = -index * itemWidth;
+// Function to update the height of each carousel item to match the tallest one
+function updateItemHeights() {
+    let maxHeight = 0;
+
+    // Find the maximum height
+    items.forEach(item => {
+        item.style.height = 'auto'; // Reset height to measure correctly
+        const height = item.getBoundingClientRect().height;
+        if (height > maxHeight) {
+            maxHeight = height;
+        }
+    });
+
+    // Set all items to the maximum height
+    items.forEach(item => {
+        item.style.height = `${maxHeight}px`;
+    });
+}
+
+// Function to update carousel position
+function updateCarouselPosition() {
+    itemWidth = items[0].getBoundingClientRect().width;
+    const carouselWidth = carousel.getBoundingClientRect().width;
+    const padding = parseFloat(getComputedStyle(items[0]).marginLeft) + parseFloat(getComputedStyle(items[0]).marginRight);
+    const offset = -index * (itemWidth + padding) + (carouselWidth - itemWidth) / 2;
     carouselInner.style.transform = `translateX(${offset}px)`;
 }
 
-function updateItemWidth() {
-    itemWidth = items[0].getBoundingClientRect().width;
-    const offset = -index * itemWidth;
-    carouselInner.style.transform = `translateX(${offset}px)`;
+// Function to handle carousel movement
+function move(direction) {
+    index = (index + direction + totalItems) % totalItems;
+    updateCarouselPosition();
+}
+
+function goToProject(projectIndex) {
+    index = projectIndex;
+    updateCarouselPosition();
+}
+
+// Function to update item width, carousel width, and position on window resize
+function updateDimensions() {
+    updateCarouselPosition(); // Update the position based on new dimensions
+    updateItemHeights(); // Ensure items are adjusted on resize
 }
 
 // Initial setup
-updateItemWidth();
+updateDimensions();
 
 // Handle window resize
-window.addEventListener('resize', updateItemWidth);
+window.addEventListener('resize', updateDimensions);
 
 // Swipe handling
 let startX, endX;
@@ -106,5 +217,10 @@ carouselInner.addEventListener('touchend', (event) => {
         move(-1); // Swipe right
     }
 });
+
+
+
+
+
 
 </script>

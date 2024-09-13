@@ -215,6 +215,7 @@ nav .fa{
     display: flex;
     flex-direction: column;
 }
+/*Delete*/
 .project-container ul {
     list-style: none;
     padding: 0;
@@ -230,6 +231,7 @@ nav .fa{
     font-size: 20px;
     padding-left: 2px;
 }
+/*Delete*/
 .description-panel {
     width: 554px; 
     margin-top: 20px;
