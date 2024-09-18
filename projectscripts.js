@@ -72,3 +72,27 @@ carouselInner.addEventListener('touchend', (event) => {
         move(-1); // Swipe right
     }
 });
+
+window.onload = function() {
+    updateDimensions();  // Initial setup
+
+    // Ensure all images are loaded before adjusting carousel dimensions
+    const images = document.querySelectorAll('.carousel-item img');
+    let imagesLoaded = 0;
+
+    images.forEach((img) => {
+        img.onload = function() {
+            imagesLoaded++;
+            if (imagesLoaded === images.length) {
+                updateDimensions();  // Recalculate once all images are loaded
+            }
+        };
+    });
+};
+
+// Debounce window resize event
+let resizeTimeout;
+window.addEventListener('resize', function() {
+    clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(updateDimensions, 100);
+});
