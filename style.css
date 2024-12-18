@@ -171,7 +171,9 @@ nav .fa{
     text-align: center;
 }
 .about-text-box h1{
-    font-size: 80px;
+    font-size: 60px;
+    text-align: left;
+    margin: 10px;
     font-family: 'League Spartan', sans-serif;
 }
 .about-text-box p{
@@ -181,6 +183,46 @@ nav .fa{
     color: #fff;
     font-family: 'Roboto', sans-serif;
 }
+.education-section h2 {
+    text-align: left;
+    margin-left: 10px;
+    font-size: 40px;
+}
+.education-section ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+.education-section ul li {
+    text-align: left;
+    padding-left: 10px;
+    font-size: 30px;
+}
+.skills-container {
+    margin-left: 10px auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0);
+    
+}
+.skills-container h2 {
+    display: inline-flex;
+    text-align: left;
+    margin-left: 10px;
+}
+.skills-box {
+    display: inline-block;
+    margin: 5px;
+    padding-left: 7px;
+    padding-right: 7px;
+    background-color: #007BFF;
+    color: #fff;
+    border-radius: 10px;
+    text-align: center;
+    box-sizing: border-box;
+    min-width: 10px;
+    flex: 1 1 auto; /* Adjusts to content size */
+}
+
+
 /*END OF ABOUT ME*/
 
 /*START OF PROJECTS*/
