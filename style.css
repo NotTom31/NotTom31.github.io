@@ -625,6 +625,12 @@ nav .fa{
     .education-section ul li{
         font-size: 18px;
     }
+    .skills-container h2{
+        font-size: 15px;
+    }
+    .skills-box {
+        font-size: 12px;
+    }
 
     .design-text-box{
         width: 90%;
