@@ -158,8 +158,6 @@ nav .fa{
 }
 .about-text-box{
     width: auto;
-    padding-left: 10px;
-    padding-right: 10px;
     color: #fff;
     position: absolute;
     top: 50%;
@@ -177,16 +175,51 @@ nav .fa{
     font-family: 'League Spartan', sans-serif;
 }
 .about-text-box p{
-    margin: 10px;
+    margin-left: 10px;
     font-size: 30px;
     text-align: left;
     color: #fff;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'League Spartan', sans-serif;
+}
+.about-text-box strong{
+    font-family: 'League Spartan', sans-serif;
+}
+.work-experience h2 {
+    text-align: left;
+    font-size: 40px;
+    font-weight: bold;
+    margin: 10px;
+    font-family: 'League Spartan', sans-serif;
+}
+
+.work-experience ul {
+    list-style-type:circle;
+    padding: 0;
+    margin: 0;
+    margin-left: 20px;
+}
+
+.work-experience ul li {
+    text-align: left;
+    margin-left: 10px;
+    font-size: 30px;
+    font-family: 'League Spartan', sans-serif;
+}
+
+.work-experience ul li strong {
+    font-family: 'League Spartan', sans-serif;
+}
+
+.work-experience ul li em {
+    font-style: italic;
+    font-family: 'League Spartan', sans-serif;
+    font-size: 22px;
 }
 .education-section h2 {
     text-align: left;
-    margin-left: 10px;
+    margin: 10px;
     font-size: 40px;
+    font-family: 'League Spartan', sans-serif;
 }
 .education-section ul {
     list-style-type: none;
@@ -195,8 +228,12 @@ nav .fa{
 }
 .education-section ul li {
     text-align: left;
-    padding-left: 10px;
+    margin-left: 10px;
     font-size: 30px;
+    font-family: 'League Spartan', sans-serif;
+}
+.education-section ul li strong {
+    font-family: 'League Spartan', sans-serif;
 }
 .skills-container {
     margin-left: 10px auto;
@@ -207,12 +244,13 @@ nav .fa{
     display: inline-flex;
     text-align: left;
     margin-left: 10px;
+    font-family: 'League Spartan', sans-serif;
 }
 .skills-box {
     display: inline-block;
-    margin: 5px;
     padding-left: 7px;
     padding-right: 7px;
+    padding-top: 2px;
     background-color: #007BFF;
     color: #fff;
     border-radius: 10px;
@@ -220,6 +258,7 @@ nav .fa{
     box-sizing: border-box;
     min-width: 10px;
     flex: 1 1 auto; /* Adjusts to content size */
+    font-family: 'League Spartan', sans-serif;
 }
 
 
@@ -565,6 +604,21 @@ nav .fa{
         font-size: 27px;
     }
     .about-text-box p{
+        font-size: 22px;
+    }
+    .work-experience h2{
+        font-size: 27px;
+    }
+    .work-experience ul li{
+        font-size: 22px;
+    }
+    .work-experience ul li em{
+        font-size: 18px;
+    }
+    .education-section h2{
+        font-size: 27px;
+    }
+    .education-section ul li{
         font-size: 22px;
     }
 
