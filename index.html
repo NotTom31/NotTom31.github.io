@@ -44,11 +44,23 @@
                 <ul>
                     <li class="home-tab"><a href="#home">Home</a></li>
                     <li class="about-tab"><a href="#about">About</a></li>
-                    <li class="projects-tab"><a href="#projects">Projects</a></li>
+                    <li class="projects-tab">
+                        <a href="#projects">Projects</a>
+                        <div class="dropdown-content">
+                            <a href="#projects" onclick="goToProject(0)">An Eternity Gone By (2024)</a>
+                            <a href="#projects" onclick="goToProject(1)">Froggee Toadems (2024)</a>
+                            <a href="#projects" onclick="goToProject(2)">The Last Wager (2024)</a>
+                            <a href="#projects" onclick="goToProject(3)">AstralBlade (2024)</a>
+                            <a href="#projects" onclick="goToProject(4)">ChromaThoth (2023)</a>
+                            <a href="#projects" onclick="goToProject(5)">MechroKnights (2023)</a>
+                            <a href="#projects" onclick="goToProject(6)">CrystalPunk (2023)</a>
+                        </div>
+                    </li>
                     <li class="resume-tab"><a href="#resume">Resume</a></li>
                     <li class="design-tab"><a href="#design">Design</a></li>
                 </ul>
             </div>
+            
             <i class="fa fa-bars" id="bars" onclick="showMenu()"></i>
         </nav>
         <div class="text-box">
@@ -71,7 +83,7 @@
                     <h1>About Me </h1>
                     <p>
                         I'm a <strong>Gameplay Programmer</strong>, <strong>UI Programmer</strong>, <strong>Game Designer</strong>, <strong>Level Designer</strong>, and <strong>Web Developer</strong>.
-                        I've led and contributed to several team projects, challenging myself to grow as a developer and always try something new.
+                        I've led and contributed to several team projects, and I'm always challenging myself to grow as a developer and try something new.
                     </p>
                     <div class="work-experience">
                         <h2>Work Experience</h2>

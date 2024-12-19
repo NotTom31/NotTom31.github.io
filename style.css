@@ -94,6 +94,31 @@ nav .fa{
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
 }
+.nav-links .dropdown-content {
+    display: none; /* Hidden by default */
+    position: absolute;
+    top: 100%; /* Aligns below the parent link */
+    left: 0;
+    background-color: #fff;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.nav-links .dropdown-content a {
+    display: block;
+    padding: 10px;
+    color: #000;
+    white-space: nowrap; /* Prevents wrapping of text */
+    text-align: left;
+}
+
+.nav-links li.projects-tab:hover .dropdown-content {
+    display: block; /* Show dropdown on hover */
+}
+
+.nav-links .dropdown-content a:hover {
+    background-color: #f0f0f0;
+}
 
 /*Standalone links*/
 .icon-link {
