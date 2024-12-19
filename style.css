@@ -215,7 +215,7 @@ nav .fa{
 .work-experience ul li em {
     font-style: italic;
     font-family: 'League Spartan', sans-serif;
-    font-size: 22px;
+    font-size: 20px;
 }
 .education-section h2 {
     text-align: left;
@@ -225,9 +225,10 @@ nav .fa{
     font-family: 'League Spartan', sans-serif;
 }
 .education-section ul {
-    list-style-type: none;
+    list-style-type: circle;
     margin: 0;
     padding: 0;
+    margin-left: 20px;
 }
 .education-section ul li {
     text-align: left;
