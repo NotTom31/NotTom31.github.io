@@ -606,12 +606,16 @@ nav .fa{
     }
     .about-text-box h1{
         font-size: 22px;
+        margin: 4px;
+        margin-left: 10px;
     }
     .about-text-box p{
         font-size: 18px;
     }
     .work-experience h2{
         font-size: 22px;
+        margin: 4px;
+        margin-left: 10px;
     }
     .work-experience ul li{
         font-size: 18px;
@@ -621,6 +625,8 @@ nav .fa{
     }
     .education-section h2{
         font-size: 22px;
+        margin: 4px;
+        margin-left: 10px;
     }
     .education-section ul li{
         font-size: 18px;
